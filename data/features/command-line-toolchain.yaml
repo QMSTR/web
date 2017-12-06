@@ -1,0 +1,4 @@
+weight: 3
+name: "Command line toolchain"
+icon: "fa fa-puzzle-piece"
+description: "Developers can run QMSTR locally to verify outcomes, review problems, or integrate it into test suites."

@@ -1,0 +1,4 @@
+weight: 5
+name: "Powerful Integrations"
+icon: "fa fa-tachometer"
+description: "Quartermaster provides APIs and hooks for free and commercial tools to perform analysis and implement metrics."

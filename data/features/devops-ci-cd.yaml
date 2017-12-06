@@ -1,0 +1,4 @@
+weight: 2
+name: "DevOps CI/CD"
+icon: "fa fa-cog"
+description: "Quartermaster integrates into DevOps CI/CD cycles and makes FOSS Compliance a quality metric for developers."

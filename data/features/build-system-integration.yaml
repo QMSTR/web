@@ -1,0 +1,4 @@
+weight: 1
+name: "Build System Integration"
+icon: "fa fa-cubes"
+description: "QMSTR integrates into the build systems to learn about the software products, their sources and depedencies."
