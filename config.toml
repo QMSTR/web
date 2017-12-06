@@ -72,7 +72,7 @@ paginate = 10
     email = "mirko@endocode.com"
 
     about_us = "<p>QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management. <a href=\"pages/impressum\">Imprint</a></p>"
-    copyright = "Copyright (c) 2017, Endocode"
+    copyright = "Copyright (c) 2017, Endocode. This web site is licensed under the AGPL."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
