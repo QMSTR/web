@@ -10,6 +10,8 @@ defaultContentLanguage = "en"
 googleAnalytics = "UA-40601155-2"
 # Define the number of posts per page
 paginate = 10
+# For Github pages?
+canonifyurls = true
 
 [menu]
 
