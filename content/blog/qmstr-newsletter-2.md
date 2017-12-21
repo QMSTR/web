@@ -59,15 +59,15 @@ experience from the development of the prototype will guide us when
 designing the first production Quartermaster.
 
 Code generators pose a difficulty in that we need a more or less
-generic way to declare which input files (incuding their license and
+generic way to declare which input files (including their license and
 authorship data) are used to generate source code. Source code
-geenrators are rather common tools and can be instrumented just like
+generators are rather common tools and can be instrumented just like
 compilers and linkers. The Qt toolkit uses a number
 of
 [well-known code generators like `moc` or the user interface compiler](http://doc.qt.io/qt-5/why-moc.html). Sometimes,
 software projects compile their own code generators during the
 software build. Quartermaster needs to be able to detect the
-relationship between the code generator input files and the generared
+relationship between the code generator input files and the generated
 source code, and use that information to identify license and author
 metadata.
 
@@ -75,7 +75,7 @@ Incremental builds may mean that only a part of the software project
 under analysis may be compiled  during a single build run. This
 happens for example when starting a make run after a previous build
 was complete and only a single file was changed. The Quartermaster
-prototype will expect that a fulll build is performed for the reports
+prototype will expect that a full build is performed for the reports
 to be complete. We may later define rules for the lifetime of the
 master process so that incremental builds are supported.
 
@@ -91,12 +91,12 @@ however, we are considering using an in-memory graph database that
 is able to store structured and less structured project metadata, and
 allows reporters to perform queries of the project metadata. This will
 become especially important once the compliance metadata of multiple
-software bilds will be aggregated into a complete overview of a whole
+software builds will be aggregated into a complete overview of a whole
 system image or software distribution.
 
 Identifying compliance input data for system dependencies will be
 implemented using the `apt` package management  of the reference
-system. This may require a knowledge base for software artifacts in
+system. This may require a knowledge base for software artefacts in
 the long run, especially since the aim is to support other operating
 systems than Linux.
 
@@ -123,7 +123,7 @@ instead of 2. After that, we will return to our usual 2 weeks
 rhythm. After the end of sprint #3, the version 0.1 requirements
 definition workshop will take place January 17, 2018, from 10am to
 5pm, at the Endocode office on Berlin. Remember to register for a
-seat, and we hope to see you there. Happy holidays, merry christmas
+seat, and we hope to see you there. Happy holidays, merry Christmas
 and a happy new year!
 
 ### Credits
