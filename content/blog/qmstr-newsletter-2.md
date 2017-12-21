@@ -88,7 +88,7 @@ by Quartermaster.
 The prototype data model is rather bare bones. It will serve us for
 the implementation fo the prototype feature set. In the long run
 however, we are considering using an in-memory graph database that
-is able to store sturctured and less structured project metadata, and
+is able to store structured and less structured project metadata, and
 allows reporters to perform queries of the project metadata. This will
 become especially important once the compliance metadata of multiple
 software bilds will be aggregated into a complete overview of a whole
@@ -106,7 +106,7 @@ Sprint #3 has now started. We aim to extend the implementation of the
 Reuse guidelines, possibly by implementing multiple checks and result
 metrics for the individual recommendations. We aim to generate the
 recommended author and license information and the bill of materials,
-add visualisations in Jenkisn for them, and -- if the project scores
+add visualisations in Jenkins for them, and -- if the project scores
 well enough -- display a "Reuse compliant" badge.
 
 We aim to move all analysis into the master process, and implement
