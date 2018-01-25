@@ -127,5 +127,4 @@ seat, and we hope to see you there. Happy holidays, merry Christmas
 and a happy new year!
 
 ### Credits
-Title image: [Angela Mueller, "Macro Lens", CC BY 2.0](https://www.flickr.com/photos/22103696@N07/4591184598)
-
+Title image: [Angela Mueller, "Macro Lens", CC BY 2.0](https://www.flickr.com/photos/22103696@N07/4591184598) Thanks for sharing!
