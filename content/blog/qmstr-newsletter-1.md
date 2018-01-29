@@ -98,5 +98,5 @@ The next prototype development update will be sent once sprint #2 is
 complete.
 
 ### Credits
-Title image: [Jorge Jaramillo, "David Brill's Gift Box Lid", CC BY 2.0](https://www.flickr.com/photos/georigami/14253603878)
+Title image: [Jorge Jaramillo, "David Brill's Gift Box Lid", CC BY 2.0](https://www.flickr.com/photos/georigami/14253603878) Thanks for sharing!
 
