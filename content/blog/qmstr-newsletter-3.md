@@ -1,6 +1,6 @@
 +++
 title = "Quartermaster prototype development update #3"
-date = "2018-01-25T00:00:00+01:00"
+date = "2018-01-29T00:00:00+01:00"
 tags = ["qmstr", "FOSS", "compliance", "cmake"]
 categories = ["qmstr"]
 banner = "img/blog/qmstr-newsletter-3-title.jpg"
