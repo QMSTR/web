@@ -6,14 +6,14 @@ categories = ["qmstr"]
 banner = "img/blog/qmstr-newsletter-3-title.jpg"
 +++
 
-The third Quartermaster development sprint marked the end of
-development of the Quartermaster prototype. Our main goals for the
-prototype was to work with our partners and collaborators to develop
-an approach to FOSS compliance automation that delivers correct and
-complete results in a variety of use cases. The integration of new
-build systems has been tested, the workflow phases have been refined
-and abstracted further and limits of the prototype design
-identified. We wrapped up the sprint with a workshop where the
+The third Quartermaster prototype development sprint also marked the
+end of development of the Quartermaster prototype. Our main goals for
+the prototype was to work with our partners and collaborators to
+develop an approach to FOSS compliance automation that delivers
+correct and complete results in a variety of use cases. The
+integration of new build systems has been tested, the workflow phases
+have been refined and abstracted further and limits of the prototype
+design identified. We wrapped up the sprint with a workshop where the
 functionality of the prototype was evaluated and the findings applied
 to a draft architecture of the first production release of
 Quartermaster.
@@ -27,7 +27,7 @@ instrumented build of the version of `curl` that was modified as part
 of the [Reuse initiative](https://reuse.software) to contain license
 identifiers across the board. We worked further on the concept of
 implementing web based feedback visualisations that support feedback
-formats like warnings and binary or coefficient type metrics. This
+formats like warnings and binary or coefficient type metrics. It
 will serve as a foundation for future integration features into CI and
 repository hosting systems. Finally, we investigated how to instrument
 the [Go language](https://golang.org) build system and showed that
@@ -52,21 +52,22 @@ for the new toolchain architecture. The hand-made crude data model
 used in the prototype will be replaced by a graph database. This will
 not only provide query capabilities that will be useful for analysis
 and reports. It also lays the foundation for "the aggregator", the
-product level tool that will collect the knowledge gathered about thew
-individual package builds, and will then create aggregate reports
-about the distributed product, like an app store program or a firmware
-image. We decided the Quartermaster master process will _always_ run
-in a Linux container, even if the host system is macOS or
-Window. Container runtimes exist on all relevant platforms. This way,
-we will be able to deliver one "authoritative" container image that
-will run the master, and issues like how to configure analysis tools
-or how to run the graph database will be implementation details users
-will not have to care about. [gRPC](https://grpc.io) will be used to
-implement the communication between the Quartermaster toolchain
-components, because it is fast, and there are interface compilers for
-all relevant languages. This will make integrations easier to
-implement, and reduce the dependency on a specific implementation
-language in the tool chain. Did anybody say microservice?
+unit-of-distribution level tool that will collect the knowledge
+gathered about the individual package builds, and will then create
+aggregate reports about the distributed product, like an app store
+program or a firmware image. We decided the Quartermaster master
+process will _always_ run in a Linux container, even if the host
+system is macOS or Window. Container runtimes exist on all relevant
+platforms. This way, we will be able to deliver one "authoritative"
+container image that will run the master, and issues like how to
+configure analysis tools or how to run the graph database will be
+implementation details users will not have to care
+about. [gRPC](https://grpc.io) will be used to implement the
+communication between the Quartermaster toolchain components, because
+it is fast, and there are interface compilers for all relevant
+languages. This will make integrations easier to implement, and reduce
+the dependency on a specific implementation language in the tool
+chain. Did anybody say microservice?
 
 ## Next steps: version 0.1! tests! demos! sweat and tears!
 
