@@ -7,7 +7,7 @@ banner = "img/blog/qmstr-newsletter-3-title.jpg"
 +++
 
 The third Quartermaster prototype development sprint also marked the
-end of development of the Quartermaster prototype. Our main goals for
+end of development of the Quartermaster prototype. Our main goal for
 the prototype was to work with our partners and collaborators to
 develop an approach to FOSS compliance automation that delivers
 correct and complete results in a variety of use cases. The
@@ -17,6 +17,7 @@ design identified. We wrapped up the sprint with a workshop where the
 functionality of the prototype was evaluated and the findings applied
 to a draft architecture of the first production release of
 Quartermaster.
+<!--more-->
 
 # Sprint #3: cmake, curl, more Jenkins, Go
 
