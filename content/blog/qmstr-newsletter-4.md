@@ -6,12 +6,12 @@ categories = ["qmstr"]
 banner = "img/blog/qmstr-newsletter-4-title.png"
 +++
 
-We hope you ready for some fireworks as we kick of the development of
-the first Quartermaster version that aims for general
+We hope you are ready for some fireworks as we kick of the development
+of the first Quartermaster version that aims for general
 availability. The goal for this sprint, after we wrapped up prototype
 development in the previous one, was to establish all the building
-blocks that will make the Quartermaster toolchain. They are based on the
-new system architecture developed at the requirements workshop on
+blocks that will make the Quartermaster toolchain. They are based on
+the new system architecture developed at the requirements workshop on
 January 17, and based (but developed from scratch) on the learnings
 from the prototype. At the end of the sprint, we had a working
 Quartermaster again, with some fancy graph visualisations.
@@ -37,20 +37,21 @@ files, which is nice. More interestingly, it is possible to query a
 subtree for a specific linked target that contains the information
 about the actual source files and dependencies. We are getting
 there. Compiler instrumentation and parsing was re-implemented, for
-example to cover numerous corner for example found in the build of the
-Linux kernel. There are probably many more of those. We are currently
-testing on Linux and macOS. Support for the Visual Studio line of
-compilers is on the horizon, but not yet in scope.
+example to cover numerous corner cases for example found in the build
+of the Linux kernel. There are probably many more of those. We are
+currently testing on Linux and macOS. Support for the Visual Studio
+line of compilers is on the horizon, but not yet in scope.
 
 ## Fancy graphs
 
-We continue to use [Curl](https://curl.haxx.se) and especially the
-[Reuse compliant branch of
-it](http://blog.jonasoberg.net/a-reuse-compliant-curl/) as a
-benchmark, and made a demo setup for it. This is a visualization
-of the build graph as it is put together in the Quartermaster graph
-database. The yellow nows are source files, the blue notes are linked
-targets, and the hard to see red nodes contain license information.
+We continue to use [Curl](https://curl.haxx.se) and especially
+the
+[Reuse compliant branch of it](http://blog.jonasoberg.net/a-reuse-compliant-curl/) as
+a benchmark, and made a demo setup for it. This is a visualization of
+the build graph as it is put together in the Quartermaster graph
+database. The yellow nodes are source files or object code, the blue
+notes are linked targets, and the hard to see red nodes contain
+license information.
 
 {{< figure src="/img/blog/qmstr-newsletter-4-screenshot.png" title="A QMSTR build graph of Curl">}}
 
