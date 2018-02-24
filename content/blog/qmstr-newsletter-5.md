@@ -20,10 +20,10 @@ CI.
 
 # Key building blocks are falling into place
 
-The first CI build job was set up to automatically build and test
+The first CI build job has been set up to automatically build and test
 incoming pull requests to the [master](https://github.com/QMSTR/qmstr)
-repository. It reports CI results for the pull requests before
-they are merged.
+repository. It reports CI results for the pull requests before they
+are merged.
 
 The `qmstr-cli` tool can now be used to interact with the master. It
 offers basic operations like triggering analysis or reporting, or to
@@ -74,10 +74,6 @@ demonstrate an introduction to Quartermaster there.
 
 The next [community hangout](https://meet.google.com/mqr-sqwi-cxn) is
 scheduled for February 28, 2018, at 16:00 CET. Feel free to join us!
-
-
-
-
 
 ### Credits
 Title image: [Sheila Sund, "Color block living", CC BY 2.0](https://www.flickr.com/photos/sheila_sund/24155743389) Thanks for sharing!
