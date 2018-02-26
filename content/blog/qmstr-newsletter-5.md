@@ -43,6 +43,8 @@ configures parameters like which analysis or reporting tools to run
 and where to report to, but also attributes like the declared license
 under which a target will be distributed.
 
+{{< figure src="/img/blog/qmstr-newsletter-5-title.png" alt="Color block living" width="60%" >}}
+
 ## Plans for the upcoming sprint
 
 In the next sprint, we plan to implement the modules that integrate
