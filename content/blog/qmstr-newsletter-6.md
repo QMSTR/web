@@ -7,24 +7,27 @@ banner = "img/blog/qmstr-newsletter-6-title.jpg"
 +++
 
 In sprint #3 towards Quartermaster v0.1, we made it easer to package
-the master into a Docker container using a multi-stage Docker file,
+the master into a Docker container using
+a
+[multi-stage Docker file](https://docs.docker.com/develop/develop-images/multistage-build/),
 merged the `qmstr-container` repository into the `qmstr` one, set up
 more CI to endure quality of the master HEAD and the incoming PRs,
 extended license detection with ScanCode and Ninka, and began
 implementing the reporting API endpoint. You can now see the build and
 test results both for incoming PRs as well as for the master mainline
-branch. Finally we prepared Quartermaster to be presented at the Open
-Source Leadership Summit. We made good progress, even though the setup
-is still a bit rough at the edges. It works, but the APIs are not yet
-as modular as we want them to be. We will focus on that in the next
-sprint.
+branch. Finally we prepared Quartermaster to be presented at
+the
+[Open Source Leadership Summit](https://events.linuxfoundation.org/events/open-source-leadership-summit-2018/). We
+made good progress, even though the setup is still a bit rough at the
+edges. It works, but the APIs are not yet as modular as we want them
+to be. We will focus on that in the next sprint.
 <!--more-->
 
 # Build, analyzers and reporters are there, but need to be refactored
 
 We finished implementing the modules that extend the build graph with
 author and license information using Ninka and ScanCode. The modules
-run in the Analysis phases, which is triggered by `qmstr-cli`. They
+run in the _Analysis_ phase, which is triggered by `qmstr-cli`. They
 are, however, still performed in-process with the master. This
 violates our concept that the modules should not become derivative
 works of the master, so that module vendors are free to choose
@@ -32,7 +35,9 @@ licenses for their modules that fit their needs. The analysis modules
 need to be refactored so that they run as separate processes executed
 by the master.
 
-{{< figure src="/img/blog/OSLS-QMSTR-Presentation.011.png" alt="QMSTR Workflow Phases and Tasks" width="100%" >}}
+{{< figure src="/img/blog/qmstr-newsletter-6-phases.png" alt="QMSTR Workflow Phases and Tasks" width="100%" >}}
+
+&nbsp;
 
 The architecture overview for Quartermaster illustrates the concepts
 of phases and functions that are key to the design. During the
@@ -82,7 +87,7 @@ plugins that showcase how Quartermaster's built-in workflows can be
 extended for specific use cases.
 
 And we are going to present our current state of development at the
-Linux Foudation's open Source Leadership Summit in Sonoma. This will
+[Linux Foudation's open Source Leadership Summit in Sonoma](https://events.linuxfoundation.org/events/open-source-leadership-summit-2018/). This will
 be the first time our project is presented to a industry-wide
 audience. We are quite excited :-) 
 
@@ -101,7 +106,6 @@ on
 March 22 in London.
 
 The next [community hangout](https://meet.google.com/mqr-sqwi-cxn) is
-scheduled for March 15, 2018, at 16:00 CET. Feel free to join us!
+scheduled for March 14, 2018, at 16:00 CET. It is ope to everybody,
+feel free to join in!
 
-### Credits
-This time, all illustrations are our own.
