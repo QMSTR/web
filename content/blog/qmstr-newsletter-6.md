@@ -106,6 +106,6 @@ on
 March 22 in London.
 
 The next [community hangout](https://meet.google.com/mqr-sqwi-cxn) is
-scheduled for March 14, 2018, at 16:00 CET. It is ope to everybody,
+scheduled for March 14, 2018, at 16:00 CET. It is open to everybody,
 feel free to join in!
 
