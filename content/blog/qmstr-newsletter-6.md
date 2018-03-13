@@ -49,7 +49,7 @@ holder and license information. The data model is technically capable
 to aggregate all kinds of software metadata like quality metrics or
 security alerts. However we have decided for the moment to focus on
 automating FOSS license compliance aspects. We may go back to other
-ideas at a later point in time. The _Reporting_ phase them performs
+ideas at a later point in time. The _Reporting_ phase then performs
 modules that trigger actions based on the data model - generating HTML
 reports, for example, but also sending notifications, or uploading
 results to knowledge bases.
