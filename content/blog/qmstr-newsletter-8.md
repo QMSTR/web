@@ -1,47 +1,120 @@
 +++
 title = "Quartermaster v0.1 development update #5: The reporting API and \"Easy Mode\""
-date = "2018-03-28T00:00:00+01:00"
+date = "2018-04-09T00:00:00+01:00"
 tags = ["qmstr", "FOSS", "compliance"]
 categories = ["qmstr"]
 banner = "img/blog/qmstr-newsletter-8-title.jpg"
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+Spring is coming, and so is Quartermaster v0.1! One more sprint to get
+there. Sprint 5 saw the implementation of initial support for Gradle
+based Java projects, a finished definition of the reporting API, the
+introduction of "easy mode" (see below), improved author detection and
+more steps towards an automated HTML reporter. Sprint 5 was the last
+roud of new features before Quartermaster v0.1 will be wrapped up for
+release. We will use the final sprint in this quarter to tie up loose
+ends, polish, containerise, document and demonstrate, and to prepare
+the v0.1 release. The first milestone will be concluded with the v0.2
+requirements workshop on April 11.
 <!--more-->
 
 # Reporting API refactored, implemented in HTML reporter
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+The elemental workflow from construction to analysis to reporting has
+become more and more defined throughout the development of version
+0.1. In sprint #4 we defined the analysis API, which was a dependency
+for the reporting API. Both are defined as gRPC interfaces to the
+master. This makes module-side implementations in different
+programming languages a possibility, since modules always are run as
+separate processes by the master.
 
-- where to make prototype definitions available?
-  + a common git submodule? This will help stabilise the API. v1.0 feature.
+Keeping the administrative effort to run a build in Quartermaster low
+and simple is a key goal for us. With the flexibility of the phased
+workflow toolchain comes some setup effort to configure how the
+modules (running in separate processes) communicate with the
+master. This may sound simple enough for now, however to scale larger
+Quartermaster deployments, it may be necessary for the modules to run
+distributed over different machines. Or, depending on the build
+environment, the whole Quartermaster deployment could run in a
+Kubernetes cluster and execute the modules in nodes. Quartermaster is
+prepared for such scenarios. To simplify the client side setup, this
+sprint introduced a first version of "easy mode", a simple command
+line tool that when used to run a build step, automatically sets up
+the process environment so that the build step knows how to
+communicate.
+
+    > qmstr make
+
+It is as easy as that, which is why we call it "easy mode". Real-life
+setups may not always be as simple, but it really helps. Also,
+by default the `qmstr` command will clean up temporary file system
+ressources before closing, so it simplifies setup and teardown of the
+environment. This will be a very central tool in the Quartermaster
+arsenal. It may learn how to set up the environment for a Python based
+analysis module, for example. Easy mode is still work in progress, and
+comes with a big fat warning when it starts. Feel free to try it.
 
 ## Plans for the upcoming (final v.01) sprint
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+There is one more sprint before the first Quartermaster milestone is
+completed. The Quartermaster project is organised into milestones that
+always span one quarter. Within each milestone, there are six sprints
+that last 2 week each. At the end of every sprint there is a public
+demo on Wednesday at 4pm CET (or CEST). At the end of the milestone,
+there is always a requirements workshop for the coming milestone that
+is open to the whole community. If you are interested in joining, get
+in touch through one the open communication channels with the project:
+
+{{< figure src="/img/blog/qmstr-newsletter-8-governance.png"
+alt="Governance of the Quartermaster project" width="100%" >}}
+
+<br />
+
+We will use the final sprint to prepare the v0.1 release. There won't
+be many new features added. Instead, we will make everything work,
+containerise the demo setups to make them more easily reproducable,
+deploy them in a public CI instance and start publishing the results
+on the Quartermaster web site. We may even add some documentation :-)
+After milestone 1, Quartermaster is ready for interested developers to
+try out and experiment with. In the spirit of Open Source, we release
+"early and often", so this version is still rough around the edges and
+probably not yet ready for production use.
+
+## And finally ... plans for milestone 2?
+
+The technical requirements for milestone 2 will be developed during
+the requirements workshop on April 11. There are some higher level
+goals we would like to start working on setting up a legal advisory
+committee to the project that will help making sure that the documents
+generated by Quartermaster are useful to reduce uncertainty in license
+compliance scenarios. And we plan to start working closely with
+interested communities and vendors to support their workflows and
+environments. We believe that by the end of milestone 2, Quartermaster
+should be ready for production use in some scenarios, like packaging
+applications for app stores or embedded devices.
+
+And we presented Quartermaster at the [BCS Open Source
+Specialist Group](http://ossg.bcs.org/) hosted event on [Yanking the
+Chain: Open Source Software Compliance in the Supply
+Chain](http://ossg.bcs.org/blog/2018/02/15/yanking-the-chain-open-source-software-compliance-in-the-supply-chain-london-22-3-2018/)
+on March 22 in London. People seem to have enjoyed it. There are
+Quartermaster bubbles on screen!
+
+{{< tweet 976858824006135808 >}}
 
 ## How to participate
+
+The milestone 2 requirements workshop will be held on April 11, 2018
+from 10am to 5pm, at the Endocode office on Berlin. Remember to
+register for a seat using the contact form. We hope to see you there!
+
+There will be the usual
+public
+[community hangout at 4pm CEST](https://meet.google.com/mqr-sqwi-cxn)
+as part of the workshop.
 
 ### Credits
 Title image: [Mispahn, "Spring time!", CC BY 2.0](https://www.flickr.com/photos/mispahn/4574914157) Thanks for
 sharing!
 
-
+Illustration: [Alex Ermolin, “We're Open”, CC BY 2.0](https://www.flickr.com/photos/alexermolin/4974314835)
