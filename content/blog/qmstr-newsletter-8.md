@@ -11,7 +11,7 @@ there. Sprint 5 saw the implementation of initial support for Gradle
 based Java projects, a finished definition of the reporting API, the
 introduction of "easy mode" (see below), improved author detection and
 more steps towards an automated HTML reporter. Sprint 5 was the last
-roud of new features before Quartermaster v0.1 will be wrapped up for
+round of new features before Quartermaster v0.1 will be wrapped up for
 release. We will use the final sprint in this quarter to tie up loose
 ends, polish, containerise, document and demonstrate, and to prepare
 the v0.1 release. The first milestone will be concluded with the v0.2
@@ -25,23 +25,23 @@ become more and more defined throughout the development of version
 0.1. In sprint #4 we defined the analysis API, which was a dependency
 for the reporting API. Both are defined as gRPC interfaces to the
 master. This makes module-side implementations in different
-programming languages a possibility, since modules always are run as
+programming languages a possibility, since modules always run as
 separate processes by the master.
 
 Keeping the administrative effort to run a build in Quartermaster low
 and simple is a key goal for us. With the flexibility of the phased
 workflow toolchain comes some setup effort to configure how the
 modules (running in separate processes) communicate with the
-master. This may sound simple enough for now, however to scale larger
+master. This may sound simple enough for now. However to scale larger
 Quartermaster deployments, it may be necessary for the modules to run
 distributed over different machines. Or, depending on the build
-environment, the whole Quartermaster deployment could run in a
-Kubernetes cluster and execute the modules in nodes. Quartermaster is
-prepared for such scenarios. To simplify the client side setup, this
-sprint introduced a first version of "easy mode", a simple command
-line tool that when used to run a build step, automatically sets up
-the process environment so that the build step knows how to
-communicate.
+environment, the whole Quartermaster deployment could in the future
+run in a Kubernetes cluster and execute the modules in
+nodes. Quartermaster is prepared for such scenarios. To simplify the
+client side setup, this sprint introduced a first version of "easy
+mode", a simple command line tool that when used to run a build step,
+automatically sets up the process environment so that the build step
+knows how to communicate.
 
     > qmstr make
 
@@ -59,11 +59,12 @@ comes with a big fat warning when it starts. Feel free to try it.
 There is one more sprint before the first Quartermaster milestone is
 completed. The Quartermaster project is organised into milestones that
 always span one quarter. Within each milestone, there are six sprints
-that last 2 week each. At the end of every sprint there is a public
+that last 2 weeks each. At the end of every sprint there is a public
 demo on Wednesday at 4pm CET (or CEST). At the end of the milestone,
 there is always a requirements workshop for the coming milestone that
 is open to the whole community. If you are interested in joining, get
-in touch through one the open communication channels with the project:
+in touch through one of the open communication channels with the
+project:
 
 {{< figure src="/img/blog/qmstr-newsletter-8-governance.png"
 alt="Governance of the Quartermaster project" width="100%" >}}
@@ -105,7 +106,7 @@ Quartermaster bubbles on screen!
 ## How to participate
 
 The milestone 2 requirements workshop will be held on April 11, 2018
-from 10am to 5pm, at the Endocode office on Berlin. Remember to
+from 10am to 5pm, at the Endocode office in Berlin. Remember to
 register for a seat using the contact form. We hope to see you there!
 
 There will be the usual
