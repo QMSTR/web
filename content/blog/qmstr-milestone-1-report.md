@@ -1,5 +1,5 @@
 +++
-title = "Quartermaster Milestone 1 Development Report: Voila, a modular, extendable FOSS Compliance Toolchain"
+title = "Quartermaster Milestone 1 Development Report: Voilà, a modular, extendable FOSS Compliance Toolchain"
 date = "2018-04-25T00:00:00+01:00"
 tags = ["qmstr", "FOSS", "compliance", "milestone", "report"]
 categories = ["qmstr"]
@@ -25,11 +25,14 @@ analysis results from different sources into reports.
 
 # Quartermaster Version 0.1
 
-This is literally Quartermaster's first birthday. The project was
-incepted at the Legal and Licensing Workshop 2017 that started on
-April 25, 2017 -- exactly one year ago. The project had a great if turbulent
-first year, and now we are admiring our first version and say "Geez,
-this is one cute baby!" Come have a peek into the crib:
+It is literally Quartermaster's first birthday. The project was
+incepted at
+the
+[Legal and Licensing Workshop 2017](https://fsfe.org/news/2017/news-20170619-01.en.html) that
+started on April 25, 2017 -- exactly one year ago. The project had a
+great if turbulent first year, and now we are admiring our first
+version and say "Geez, this is one cute baby!" Come have a peek into
+the crib:
 
 {{< figure src="/img/blog/qmstr-ms-1-report-title.png" alt="Happy birthday, Quartermaster!" width="60%" >}}
 
@@ -47,12 +50,13 @@ reporting phases. For each of the phases, gRPC based APIs have been
 designed that clients (the modules) use to communicate with the
 master. A first set of modules exists that covers the functions of the
 three phases. Build graphs can currently be generated for builds using
-the GNU compiler collection, and for Gradle-based Java programs. A
-ScanCode analysis module and a rudimentary SPDX analyzer exist that
-augment the knowledge graph with compliance data. A first reporting
-module generates static HTML from the graph that can be published on a
-web site or integrated into products and shipped with them. "Show
-me!", you say? Sure:
+the GNU compiler collection, and for Gradle-based Java
+programs. A [ScanCode](https://github.com/nexB/scancode-toolkit)
+analysis module and a rudimentary SPDX analyzer exist that augment the
+knowledge graph with compliance data. A first reporting module
+generates static HTML from the graph that can be published on a web
+site or integrated into products and shipped with them. "Show me!",
+you say? Sure:
 
 {{< figure src="/img/blog/QMSTR-curl-pipeline.png" alt="A Quartermaster pipeline building curl" width="100%" >}}
 
@@ -94,7 +98,7 @@ limited capacity for the workshops, so make sure to register early!)
 The project applies an open, meritocratic governance model: our code
 and the roadmap including tickets are on Github, and there is an open
 Slack workspace that everybody is invited to join. In general, all
-aspects of the project are open for collaboration, it is truly Open
+aspects of the project are open for collaboration -- it is truly Open
 Source.
 
 ### Have some standards, please...
@@ -139,11 +143,11 @@ may notice that there are still plenty of gaps at the version
 level. As every newborn, ours is still learning to walk, talk and then
 to go hang out and party with the other 2 year olds. If the theme of
 version 0.1 was "the workflow toolchain", the theme of milestone two
-will be "documentation". On April 11, 2018 we held the milestone 2
-requirements workshop. During the Legal and Licensing Workshop 2018,
-participants gave feedback and identified more requirements. This
-input was poured into a milestone roadmap roughly represented by the
-tickets in
+will be "compliance documentation". On April 11, 2018 we held the
+milestone 2 requirements workshop. During the Legal and Licensing
+Workshop 2018 last week, participants gave feedback and identified
+more requirements. This input was poured into a milestone roadmap
+roughly represented by the tickets in
 the
 [QMSTR super repository](https://github.com/QMSTR/qmstr-all/milestones?direction=asc&sort=due_date&state=open). After
 some housekeeping, we will implement implement SPDX metadata handling
@@ -158,7 +162,7 @@ requirements workshop for version 0.3 in mid July 2018.
 
 Quartermaster is currently being developed mainly by Endocode with the
 support of Siemens, Google and the Linux Foundation. Since the project
-is completely Open Source, it needs your support, any help is welcome:
+is completely Open Source, it needs your support. Any help is welcome:
 We appreciate your code contributions, your feedback and your domain
 knowledge. Enterprises that plan on using Quartermaster should
 consider financially supporting the project through a grant. Grants
@@ -173,8 +177,9 @@ next
 free to join.
 
 We are considering organising a Quartermaster hackfest, potentially
-colocated with a major Open Source conference. If you are
-interested, please let us know so that can start making plans.
+colocated with a major Open Source conference. If you are interested
+in attending, hosting or sponsoring such a hackfest, please let us
+know so that can start making plans.
 
 ## Thank You Notes
 
