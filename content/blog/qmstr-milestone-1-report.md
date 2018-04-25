@@ -91,7 +91,7 @@ detail.
 Everybody interested in Quartermaster is invited to join the public
 sprint reviews and milestone requirements workshops (there is however
 limited capacity for the workshops, so make sure to register early!)
-The project applies an open, meritocratic governance model: Our code
+The project applies an open, meritocratic governance model: our code
 and the roadmap including tickets are on Github, and there is an open
 Slack workspace that everybody is invited to join. In general, all
 aspects of the project are open for collaboration, it is truly Open
@@ -99,7 +99,7 @@ Source.
 
 ### Have some standards, please...
 
-There are some norms though that the project applies: Everything
+There are some norms though that the project applies: everything
 developed as part of Quartermaster is fully and
 completely
 [Free and Open Source software](https://fsfe.org/about/basics/freesoftware.en.html). "Open
@@ -151,7 +151,7 @@ for analysis, and extend the current reporting modules. Some effort
 will be invested into creating an automated integration testing
 environment to ensure the stability of the toolchain. Details for the
 final three sprints will be identified as we go (or maybe based on
-your feedback?) Expect version 0.2 in early July, and the next
+your feedback?). Expect version 0.2 in early July, and the next
 requirements workshop for version 0.3 in mid July 2018.
 
 ## How to participate and how to help
