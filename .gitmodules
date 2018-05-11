@@ -1,7 +1,7 @@
 [submodule "themes/hugo-universal-theme"]
 	path = themes/hugo-universal-theme
-	url = git@github.com:devcows/hugo-universal-theme.git
+	url = https://github.com/devcows/hugo-universal-theme.git
 [submodule "tools/databranches"]
 	path = tools/databranches
-	url = git@github.com:endocode/databranches.git
+	url = https://github.com/endocode/databranches.git
 	branch = master
