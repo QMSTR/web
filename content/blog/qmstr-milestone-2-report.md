@@ -26,7 +26,7 @@ all the details on the new release.
 # Quartermaster Version 0.2
 
 As announced in an earlier blog post, a milestone version for
-Quartermaster will be tagged roughly evey 3 months. Quartermaster as a
+Quartermaster will be tagged roughly every 3 months. Quartermaster as a
 product is now 6 months old, and we believe that productive use cases
 are now becoming a reality. A [new
 tutorial](https://github.com/QMSTR/qmstr/blob/master/doc/Getting-Started.md)
@@ -37,7 +37,7 @@ side control tool (`qmstrctl`) is used to
 interact with the master. Based on the functionality provided with
 this release, the team will focus on implementing a number of
 real-life use cases that will be published on the project web site and
-serves as references on how to use the toolchain.
+serve as references on how to use the toolchain.
 
 ## Key features
 
@@ -85,8 +85,8 @@ include triggering the analysis and reporting phases, querying the
 master Log output and copying the output data to the client side. In
 the process, the ports and container names have been abstracted so
 that multiple masters running on the same host do not interfere with
-eah other. All tools now use a consistent pflag-based command line
-interface. Client tools can use a subscription mechanism to listen to
+each other. All tools now use consistent POSIX/GNU-style command
+line flags. Client tools can use a subscription mechanism to listen to
 master events.
 
 
