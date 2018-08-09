@@ -6,12 +6,12 @@ categories = ["qmstr"]
 banner = "img/blog/qmstr-ms-2-report-title.jpg"
 +++
 
-After another quarter of intense software development, We are proud to
-announce the availablility of Quartermaster v0.2. Quartermaster is a
+After another quarter of intense software development, we are proud to
+announce the availability of Quartermaster v0.2. Quartermaster is a
 toolchain that automates the analysis and documentation of Open Source
 license compliance. Software vendors - businesses as well as Open
 Source communities - deploy Quartermaster in their build pipelines to
-create compliance documentation while software package sare being
+create compliance documentation while software package share being
 created. With the new version, Quartermaster learns to ingest SPDX
 formatted source code manifests, adds a client library for developing
 analyzer or reporter modules in the Python programming
@@ -28,7 +28,7 @@ all the details on the new release.
 As announced in an earlier blog post, a milestone version for
 Quartermaster will be tagged roughly evey 3 months. Quartermaster as a
 product is now 6 months old, and we believe that productive use cases
-are now becomong a reality. A [new
+are now becoming a reality. A [new
 tutorial](https://github.com/QMSTR/qmstr/blob/master/doc/Getting-Started.md)
 illustrates the philosophy and basic use of the Quartermaster
 toolchain. The build system has been updated to simplify the
@@ -62,10 +62,10 @@ Trust levels and confidence levels are concepts that have been added
 to analysis modules. The philosophy of Quartermaster is to provide the
 glue code between all the existing tools for license and contributor
 analysis and other compliance metadata, even if they provide
-overlapping or conflicting information. By assiging different trust
+overlapping or conflicting information. By assigning different trust
 levels to, for example, two license scanning tools, the user
 configures which results should be considered. The module with the
-higher trust level will "trump" the results provide by the less
+higher trust level will "trump" the results provided by the less
 trusted module. In a real life scenario, compliance information
 provided by a knowledge base curated by reviewers can be configured to
 overwrite results detected by license scanners. Trust levels are
@@ -93,7 +93,7 @@ master events.
 The updated make-based build system provides targets to create the
 master images, modules and install the client side tool. While the
 core parts of Quartermaster are written in the Go programming
-language, the releaae also contains Python code and various analysis
+language, the release also contains Python code and various analysis
 and reporting tools that are packaged into the master images. The
 build system provides a single entry point into all the setup
 tasks. See the [installation
@@ -103,7 +103,7 @@ developing Quartermaster modules, as well as the implementation of a
 SPDX analyzer that processes source code package manifests in SPDX
 format. A first version of a standardized bill of materials report was
 added to the API and implemented in the HTML reporter. The HTML
-reporter now generates more detailed bills of material for the project
+reporter now generates more detailed bills of materials for the project
 under analysis, and is able to aggregate the documentation generated
 in subsequent runs (this requires setting up a persistent cache
 volume, see above).
