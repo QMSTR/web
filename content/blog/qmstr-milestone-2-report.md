@@ -45,18 +45,18 @@ A few new concepts have been introduced that add important
 functionality to the modules executed in the context of the
 master. All modules are now pre-configured with a cache and an output
 directory. The master instances are ephemeral, there is no
-long-running services as part of a Quartermaster setup. The cache
+long-running service as part of a Quartermaster setup. The cache
 location allows modules to persist information that may then be
 accessed in subsequent builds. This way modules can, for example,
-trigger alerts or notifications if metrics change, or compare
-analysis results to a baseline. The cached information is not directly
-useful to the user, however it may greatly improve the value of the
-generated reports. The module output directory bridges the master
-context and the build directory. All data generated in the output
-directories of the reporters will be made available in the build
-directory when the master quits or when executing a special copy
-operation. This feature provides an easy way, for example, to add
-generated reports to packages during a following installation step.
+trigger alerts or notifications if metrics change, or compare analysis
+results to a baseline. The cached information is not directly useful
+to the user, however it may greatly improve the value of the generated
+reports. The module output directory bridges the master context and
+the build directory. All data generated in the output directories of
+the reporters will be made available in the build directory when the
+master quits or when executing a special copy operation. This feature
+provides an easy way, for example, to add generated reports to
+packages during a following packaging or installation step.
 
 Trust levels and confidence levels are concepts that have been added
 to analysis modules. The philosophy of Quartermaster is to provide the
@@ -71,18 +71,18 @@ provided by a knowledge base curated by reviewers can be configured to
 overwrite results detected by license scanners. Trust levels are
 configured per analyzer module in the `qmstr.yaml` configuration
 file. Confidence levels come into play of two modules with the same
-trust levels (two license scanners, for example) provide
-results. Confidence levels are provided by the analysis tools, as
-opposed to being configured by the user. They are a way for tools to
-express how certain they are about the results, and help the reporters
-to select which information to prefer.
+trust levels (two license scanners, for example) provide results of
+the same type. Confidence levels are provided by the analysis tools,
+as opposed to being configured by the user. They are a way for tools
+to express how certain they are about the results, and help the
+reporters to select which information to prefer.
 
 The `qmstrctl` tool has been refactored from what was previously
 known as ~~`qmstr-cli`~~ and provides functions for the client side to
 control and interact with the master. In fact, as the tutorial is
 showing, it now starts and quits the master as well. Other functions
 include triggering the analysis and reporting phases, querying the
-master Log output and copying the output data to the client side. In
+master log output and copying the output data to the client side. In
 the process, the ports and container names have been abstracted so
 that multiple masters running on the same host do not interfere with
 each other. All tools now use consistent POSIX/GNU-style command
@@ -165,7 +165,7 @@ Quartermaster the default toolchain for FOSS compliance documentation.
 
 We set up a new [project
 board](https://github.com/orgs/QMSTR/projects/1) that provides an
-ovderview of the progress of the ongoing work across all the
+overview of the progress of the ongoing work across all the
 repositories of the project. Issues may be reported against any of the
 active Quartermaster repositories.
 
