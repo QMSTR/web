@@ -1,4 +1,4 @@
-baseurl = "http://qmstr.org/"
+baseurl = "https://qmstr.org/"
 title = "The Quartermaster project."
 theme = "hugo-universal-theme"
 languageCode = "en-us"
