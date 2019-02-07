@@ -1,6 +1,6 @@
 +++
 title = "Quartermaster Milestone 3 Development Report: C++, Linux, CCache"
-date = "2019-02-03T00:00:00+01:00"
+date = "2019-02-07T08:00:00+01:00"
 tags = ["qmstr", "FOSS", "compliance", "milestone", "report"]
 categories = ["qmstr"]
 banner = "img/blog/qmstr-ms-3-report-title.jpg"
