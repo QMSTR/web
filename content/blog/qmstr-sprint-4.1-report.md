@@ -46,9 +46,10 @@ Go and Python.
 
 Both for module and client side programmers it is important to
 understand the licensing perspective of QMSTR: Modules and clients are
-separate binaries, and the QMSTR code these binaries use comes under
-the terms of the LGPL. This means module and client authors choose their own
-licenses freely to create free or proprietary modules and clients.
+separate binaries. The QMSTR code these binaries use is licensed under the
+terms of the LGPL. This means module and client authors are able to
+choose their own licenses to create free or proprietary modules and
+clients.
 
 ## Repository organization
 
