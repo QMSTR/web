@@ -60,7 +60,7 @@ canonifyurls = true
 [[menu.topbar]]
     weight = 4
     name = "Slack"
-    url = "https://join.slack.com/t/qmstr/shared_invite/enQtMjYxNjUwNDIzNTcyLTcwNzQ4NzZhOTZiYTRjNzExMTUxM2VmN2I5MTRjMDM1OGY2ODBlODYxNDViMjMyNDBiODM0M2I2M2Q3OGQxN2U"
+    url = "https://join.slack.com/t/qmstr/shared_invite/zt-3c77wmxg-8OOkXlfnMMbx6i~hNTD9cQ"
     pre = "<i class='fa fa-2x fa-slack'></i>"
 
 [params]
