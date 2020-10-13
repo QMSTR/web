@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://qmstr.org/packages/</loc>
+  </url>
+  
+  <url>
+    <loc>http://qmstr.org/packages/curl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://qmstr.org/packages/curl/curl/</loc>
+  </url>
+  
+  <url>
+    <loc>http://qmstr.org/packages/curl/curl/curl-7_72_0-233-ga32687798/</loc>
+  </url>
+  
+  <url>
+    <loc>http://qmstr.org/packages/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://qmstr.org/packages/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

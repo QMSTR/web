@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scancode on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/scancode/</link>
+    <description>Recent content in Scancode on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Feb 2018 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/scancode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster v0.1 development update #2: Key building blocks are falling into place</title>
+      <link>https://qmstr.org/blog/2018/02/23/qmstr-newsletter-5/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2018/02/23/qmstr-newsletter-5/</guid>
+      <description>&lt;p&gt;It feels great when a plan comes together. After the requirements
+workshop on January 17, the Quartermaster team had a pretty good
+understanding of what the architecture of the toolchain should look
+like. Two weeks into development, we now see that the design is solid,
+and that the runtime phases and modular analysis and reporting
+concepts work well. The details of the architecture will be explained
+in an upcoming blog post. Right now, we are making good progress
+towards a working system. The &lt;code&gt;curl&lt;/code&gt; demo was extended, we added the
+&lt;code&gt;qmstr-cli&lt;/code&gt; tool to manage the master, and set up the first internal
+CI.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

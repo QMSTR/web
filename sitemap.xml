@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://qmstr.org/blog/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/categories/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/compliance/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/foss/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/qmstr/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/categories/qmstr/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2019/04/03/qmstr-sprint-4.3-report/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/report/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/sprint/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/</loc>
+    <lastmod>2019-04-03T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/announcement/</loc>
+    <lastmod>2019-02-25T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2019/02/25/qmstr-requirements-workshop-0.5/</loc>
+    <lastmod>2019-02-25T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/requirements/</loc>
+    <lastmod>2019-02-25T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/workshop/</loc>
+    <lastmod>2019-02-25T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2019/02/20/qmstr-sprint-4.1-report/</loc>
+    <lastmod>2019-02-20T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/milestone/</loc>
+    <lastmod>2019-02-07T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2019/02/07/qmstr-milestone-3-report/</loc>
+    <lastmod>2019-02-07T08:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/08/08/qmstr-milestone-2-report/</loc>
+    <lastmod>2018-08-08T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/04/25/qmstr-milestone-1-report/</loc>
+    <lastmod>2018-04-25T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/04/09/qmstr-newsletter-8/</loc>
+    <lastmod>2018-04-09T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/03/22/qmstr-newsletter-7/</loc>
+    <lastmod>2018-03-22T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/lfosls/</loc>
+    <lastmod>2018-03-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/03/13/qmstr-newsletter-6/</loc>
+    <lastmod>2018-03-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/ci/</loc>
+    <lastmod>2018-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/github/</loc>
+    <lastmod>2018-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/ninka/</loc>
+    <lastmod>2018-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/02/23/qmstr-newsletter-5/</loc>
+    <lastmod>2018-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/scancode/</loc>
+    <lastmod>2018-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/dgraph/</loc>
+    <lastmod>2018-02-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/grpc/</loc>
+    <lastmod>2018-02-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/02/13/qmstr-newsletter-4/</loc>
+    <lastmod>2018-02-13T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/cmake/</loc>
+    <lastmod>2018-01-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2018/01/29/qmstr-newsletter-3/</loc>
+    <lastmod>2018-01-29T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/tags/jenkins/</loc>
+    <lastmod>2017-12-20T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2017/12/20/qmstr-newsletter-2/</loc>
+    <lastmod>2017-12-20T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/blog/2017/12/11/qmstr-newsletter-1/</loc>
+    <lastmod>2017-12-11T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/pages/impressum/</loc>
+    <lastmod>2017-12-06T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/pages/</loc>
+    <lastmod>2017-12-06T00:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/faq/</loc>
+  </url>
+  
+</urlset>

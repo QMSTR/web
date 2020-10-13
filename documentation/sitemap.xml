@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/</loc>
+    <lastmod>2019-04-01T14:25:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/what-is-qmstr/</loc>
+    <lastmod>2019-04-01T14:25:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/create/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/why-qmstr/</loc>
+    <lastmod>2019-04-01T14:25:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/</loc>
+    <lastmod>2019-03-01T09:22:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/describe/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/getting-started/debian-curl_tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/introduction/getting-started/json-c_tutorial/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/developer/</loc>
+    <lastmod>2019-04-29T17:06:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/developer/how-to-participate/</loc>
+    <lastmod>2019-04-29T17:06:07+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/qmstr-cli/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/wip/android-support/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/wip/validation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/wip/self-contained-modules/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/developer/dev-environment/</loc>
+    <lastmod>2019-04-18T15:21:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/connections/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/labels/</loc>
+    <lastmod>2019-03-01T09:22:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/wip/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstr/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstr_run/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstr_validate/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_add-graph/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_analyze/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_clean/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_connect/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_copy/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_create/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_create_file/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_create_package/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_create_project/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_delete/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_describe/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_disconnect/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_logs/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_quit/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_report/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_snapshot/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_spawn/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_start/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_status/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_update/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_update_file/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_update_package/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_update_project/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_version/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/reference/qmstrctl_wait/</loc>
+    <lastmod>2020-07-06T07:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/</loc>
+    <lastmod>2019-04-01T14:25:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/</loc>
+  </url>
+  
+  <url>
+    <loc>https://qmstr.org/documentation/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

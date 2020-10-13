@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quartermaster - Documentation</title>
+    <link>https://qmstr.org/documentation/</link>
+    <description>Recent content on Quartermaster - Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/documentation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is QMSTR?</title>
+      <link>https://qmstr.org/documentation/introduction/what-is-qmstr/</link>
+      <pubDate>Thu, 17 Jan 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/introduction/what-is-qmstr/</guid>
+      <description>Quartermaster is an integrated free and open source software (FOSS) toolchain that implements industry best practises of license compliance management. It is FOSS because the QMSTR community believes that software that manages FOSS compliance becomes critical infrastructure to the wider open source community and should itself be FOSS. QMSTR is developed in collaboration with users, legal experts and other interested stakeholders.
+QMSTR: A command-line workflow toolchain for FOSS compliance QMSTR is implemented as a command line toolchain.</description>
+    </item>
+    
+    <item>
+      <title>Why QMSTR?</title>
+      <link>https://qmstr.org/documentation/introduction/why-qmstr/</link>
+      <pubDate>Thu, 17 Jan 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/introduction/why-qmstr/</guid>
+      <description>A key impulse for the development of QMSTR was the realization that there is still no industry standard for FOSS compliance tooling, and the understanding that the management of software copyright and license compliance in FOSS needs to improve. While from a legal perspective, every obligation and liability technically boils down to managing the risk of running into trouble and the mitigation of possible damage, we believe that this is not the right mindset to approach FOSS license compliance.</description>
+    </item>
+    
+    <item>
+      <title>How to participate</title>
+      <link>https://qmstr.org/documentation/developer/how-to-participate/</link>
+      <pubDate>Thu, 18 Apr 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/developer/how-to-participate/</guid>
+      <description>The QMSTR development process is open to everybody to participate and contribute. The QMSTR community aims at a maximum of openness, transparency and accountability, and at minimizing barriers for newcomers. There are three pillars to the work of the community:
+ An open development process: Development is organized into quarterly milestones made up of bi-weekly sprints. Requirements are collaboratively developed. The QMSTR community offers mentoring opportunities for newcomer users and potential contributors.</description>
+    </item>
+    
+    <item>
+      <title>Development environment</title>
+      <link>https://qmstr.org/documentation/developer/dev-environment/</link>
+      <pubDate>Mon, 01 Apr 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/developer/dev-environment/</guid>
+      <description>To create a local development environment for Quartermaster, follow these instructions. The master by default runs in a container. See below for more details.
+Prerequisites Quartermaster leverages Protobuf &amp;amp; GRPC for the master - client communication. The protoc Protobuf compiler needs to be installed together with the Go protobuf library and generator. The later will be installed via the Makefile.
+Host machine preparation Install the depencencies:
+ If you are running an Ubuntu machine:</description>
+    </item>
+    
+    <item>
+      <title>Node labels in Quartermaster</title>
+      <link>https://qmstr.org/documentation/qmstr-basics/labels/</link>
+      <pubDate>Wed, 27 Feb 2019 09:48:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/qmstr-basics/labels/</guid>
+      <description>Node labels are used to flexibly add data to nodes based on key-value pairs. For example, if a build process consists of multiple stages, a label can be used to mark nodes with the stage during which they are created. Or a target program generated during the build could be marked with a release milestone name. The labelling functionality allows for user-defined concepts to be flexibly represented in the knowledge graph.</description>
+    </item>
+    
+    <item>
+      <title>qmstr</title>
+      <link>https://qmstr.org/documentation/reference/qmstr/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstr/</guid>
+      <description> qmstr qmstr performs Quartermaster client-side operations
+Synopsis qmstr performs Quartermaster operations that have only client-side effects. It does not require a QMSTR master to be available.
+Options  -h, --help help for qmstr -v, --verbose enable diagnostics  SEE ALSO  qmstr dev-generate-reference - Generate command line reference in the specified path qmstr run - Run a shell command with QMSTR instrumentation qmstr validate - Validate a package against a manifest  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstr dev-generate-reference</title>
+      <link>https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/</guid>
+      <description> qmstr dev-generate-reference Generate command line reference in the specified path
+Synopsis Generate the command line reference in Markdown format. The pages will contain metadata to integrate into a Hugo web site.
+qmstr dev-generate-reference [path] [flags]  Options  -b, --baseURL string The base URL used in the reference (optional) -h, --help help for dev-generate-reference  Options inherited from parent commands  -v, --verbose enable diagnostics  SEE ALSO  qmstr - qmstr performs Quartermaster client-side operations  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstr run</title>
+      <link>https://qmstr.org/documentation/reference/qmstr_run/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstr_run/</guid>
+      <description>qmstr run Run a shell command with QMSTR instrumentation
+Synopsis run executes the argument after applying temporary QMSTR instrumentation. For example, &amp;ldquo;qmstr make&amp;rdquo; sets up a QMSTR instrumented environment, then executes &amp;ldquo;make&amp;rdquo;, and finally restores the environment and deletes all temporary files. The environment variable QMSTR_INSTRUMENTATION_HOME will be defined to point to the QMSTR instrumentation directory.
+qmstr run [flags]  Options  -h, --help help for run -i, --instdir string Create instrumentation in this directory (optional) -k, --keep Keep the created directories instead of cleaning up.</description>
+    </item>
+    
+    <item>
+      <title>qmstr validate</title>
+      <link>https://qmstr.org/documentation/reference/qmstr_validate/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstr_validate/</guid>
+      <description> qmstr validate Validate a package against a manifest
+Synopsis validate needs at least one argument, the package file. Depending on the package format the manifest can be internal and/or external. For example: qmstr validate curl-a.b.c.deb curl-a.b.c.deb.spdx
+qmstr validate [flags]  Options  -h, --help help for validate  Options inherited from parent commands  -v, --verbose enable diagnostics  SEE ALSO  qmstr - qmstr performs Quartermaster client-side operations  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl/</guid>
+      <description> qmstrctl qmstrctl controls and manages the QMSTR master
+Synopsis qmstrctl controls and manages the QMSTR master process. It provides commands to run, quit and configure the master and to interact with the QMSTR knowledge base.
+qmstrctl [flags]  Options  --cserv string connect to control service -h, --help help for qmstrctl --verbose enable diagnostics  SEE ALSO  qmstrctl add-graph - Add partial graphs from a configuration file qmstrctl analyze - Start analysis on the QMSTR master qmstrctl clean - Remove stopped QMSTR containers qmstrctl connect - Connect nodes with specific edges qmstrctl copy - Copy results from the QMSTR master qmstrctl create - Create a new node qmstrctl delete - Delete node from the database qmstrctl describe - Print description of the node qmstrctl dev-generate-reference - Generate command line reference in the specified path qmstrctl disconnect - Disconnect nodes with specific edges qmstrctl logs - Print QMSTR master logs qmstrctl quit - Quit QMSTR master qmstrctl report - Start report on the QMSTR master qmstrctl snapshot - Take snapshot of the QMSTR master state qmstrctl spawn - Spawn a container adjacent to the master and execute a command qmstrctl start - Start the QMSTR master qmstrctl status - Print the QMSTR master status qmstrctl update - Update nodes qmstrctl version - Print the version of qmstrctl qmstrctl wait - Wait until the QMSTR master is ready  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl add-graph</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_add-graph/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_add-graph/</guid>
+      <description> qmstrctl add-graph Add partial graphs from a configuration file
+Synopsis Add missing files nodes and the connection between them. Provide the extra information you want to include in the database, through a configuration yaml file.
+qmstrctl add-graph [config_file] [flags]  Options  -h, --help help for add-graph  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl analyze</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_analyze/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_analyze/</guid>
+      <description> qmstrctl analyze Start analysis on the QMSTR master
+Synopsis Start analysis phase on the QMSTR master server.
+qmstrctl analyze [flags]  Options  -h, --help help for analyze  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl clean</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_clean/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_clean/</guid>
+      <description> qmstrctl clean Remove stopped QMSTR containers
+Synopsis Remove all stopped QMSTR containers
+qmstrctl clean [flags]  Options  --force force removing all qmstr containers (also currently running) -h, --help help for clean  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl connect</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_connect/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_connect/</guid>
+      <description> qmstrctl connect Connect nodes with specific edges
+Synopsis Usage: qmstrctl connect  &amp;hellip; Connect to Node  Node(s) . In case of multiple edges for the specified types you can use &amp;ndash;ToEdge flag to specify the edge you want.
+qmstrctl connect [flags]  Options  --edge string Edge to use when connecting nodes -h, --help help for connect  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl copy</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_copy/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_copy/</guid>
+      <description> qmstrctl copy Copy results from the QMSTR master
+Synopsis Copy report results from QMSTR master to the client build directory.
+qmstrctl copy [flags]  Options  -h, --help help for copy  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl create</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_create/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_create/</guid>
+      <description> qmstrctl create Create a new node
+Synopsis create a new node described by a node identifier
+Options  -h, --help help for create  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master qmstrctl create file - Create a new file node qmstrctl create package - Create a new package node qmstrctl create project - Create a new project node  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl create file</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_create_file/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_create_file/</guid>
+      <description> qmstrctl create file Create a new file node
+Synopsis create a new file node described by a node identifier
+qmstrctl create file [flags]  Options  --hash string Set FileNode&#39;s hash -h, --help help for file --name string Set FileNode&#39;s name --path string Set FileNode&#39;s path --timestamp string Set FileNode&#39;s timestamp  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl create - Create a new node  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl create package</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_create_package/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_create_package/</guid>
+      <description> qmstrctl create package Create a new package node
+Synopsis create a new package node described by a node identifier
+qmstrctl create package [flags]  Options  --buildconfig string Set PackageNode&#39;s buildconfig -h, --help help for package --name string Set PackageNode&#39;s name --timestamp string Set PackageNode&#39;s timestamp --version string Set PackageNode&#39;s version  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl create - Create a new node  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl create project</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_create_project/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_create_project/</guid>
+      <description> qmstrctl create project Create a new project node
+Synopsis create a new project node described by a node identifier
+qmstrctl create project [flags]  Options  -h, --help help for project --name string Set ProjectNode&#39;s name --timestamp string Set ProjectNode&#39;s timestamp  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl create - Create a new node  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl delete</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_delete/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_delete/</guid>
+      <description> qmstrctl delete Delete node from the database
+Synopsis Delete the provided node from the database.
+qmstrctl delete [type_of_node:attribute:value] [flags]  Options  -h, --help help for delete  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl describe</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_describe/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_describe/</guid>
+      <description> qmstrctl describe Print description of the node
+Synopsis Print description of the node and traverse the tree to print the description of the nodes connected to it.
+qmstrctl describe [type_of_node:attribute:value] [flags]  Options  -h, --help help for describe --less show less information-info nodes are not traversed  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl dev-generate-reference</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/</guid>
+      <description> qmstrctl dev-generate-reference Generate command line reference in the specified path
+Synopsis Generate the command line reference in Markdown format. The pages will contain metadata to integrate into a Hugo web site.
+qmstrctl dev-generate-reference [path] [flags]  Options  -b, --baseURL string The base URL used in the reference (optional) -h, --help help for dev-generate-reference  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl disconnect</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_disconnect/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_disconnect/</guid>
+      <description> qmstrctl disconnect Disconnect nodes with specific edges
+Synopsis Usage: qmstrctl disconnect  &amp;hellip; Disconnect from Node  Node(s) .
+qmstrctl disconnect [type_of_node:attribute:value] [type_of_node:attribute:value] [flags]  Options  --edge string Edge to use when disconnecting nodes -h, --help help for disconnect  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl logs</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_logs/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_logs/</guid>
+      <description> qmstrctl logs Print QMSTR master logs
+Synopsis Print the logs of the QMSTR master container
+qmstrctl logs [flags]  Options  --follow follow logs -h, --help help for logs  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl quit</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_quit/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_quit/</guid>
+      <description> qmstrctl quit Quit QMSTR master
+Synopsis Quit the running QMSTR master. This will copy the results produced by the master to the user&amp;rsquo;s workspace.
+qmstrctl quit [flags]  Options  -f, --force force quit -h, --help help for quit --no-copy Do not copy results  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl report</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_report/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_report/</guid>
+      <description> qmstrctl report Start report on the QMSTR master
+Synopsis Start report phase on the QMSTR master server.
+qmstrctl report [flags]  Options  -h, --help help for report  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl snapshot</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_snapshot/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_snapshot/</guid>
+      <description> qmstrctl snapshot Take snapshot of the QMSTR master state
+Synopsis Create a database export of the graph database
+qmstrctl snapshot [flags]  Options  -f, --force force override snapshot -h, --help help for snapshot -O, --out string Output filename (default &amp;quot;qmstr-snapshot.tar&amp;quot;)  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl spawn</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_spawn/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_spawn/</guid>
+      <description> qmstrctl spawn Spawn a container adjacent to the master and execute a command
+Synopsis spawn starts a container in the same container network as the master, and executes the specified arguments.
+qmstrctl spawn [flags]  Options  -h, --help help for spawn  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl start</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_start/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_start/</guid>
+      <description>qmstrctl start Start the QMSTR master
+Synopsis Start the QMSTR master at a random port in the range between 6787 and 7811.
+qmstrctl start [flags]  Options  -c, --config string Path to qmstr configuration file (default &amp;quot;qmstr.yaml&amp;quot;) -h, --help help for start --image string provide a custom docker image to run QMSTR master --seed string Replay dgraph export on init -t, --timeout int timeout after the specified time (seconds).</description>
+    </item>
+    
+    <item>
+      <title>qmstrctl status</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_status/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_status/</guid>
+      <description> qmstrctl status Print the QMSTR master status
+Synopsis Print the QMSTR master status
+qmstrctl status [flags]  Options  --follow print status and follow events -h, --help help for status  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl update</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_update/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_update/</guid>
+      <description> qmstrctl update Update nodes
+Synopsis Update nodes in the database by adding or modifying their attributes.
+Options  -h, --help help for update  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master qmstrctl update file - update a file node qmstrctl update package - update a package node qmstrctl update project - update a project node  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl update file</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_update_file/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_update_file/</guid>
+      <description> qmstrctl update file update a file node
+Synopsis update a file node described by a node identifier
+qmstrctl update file [flags]  Options  -h, --help help for file --name string Set FileNode&#39;s name --path string Set FileNode&#39;s path --timestamp string Set FileNode&#39;s timestamp  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl update - Update nodes  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl update package</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_update_package/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_update_package/</guid>
+      <description> qmstrctl update package update a package node
+Synopsis update a package node described by a node identifier
+qmstrctl update package [flags]  Options  --buildconfig string Set PackageNode&#39;s buildconfig -h, --help help for package --name string Set PackageNode&#39;s name --timestamp string Set PackageNode&#39;s timestamp --version string Set PackageNode&#39;s version  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl update - Update nodes  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl update project</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_update_project/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_update_project/</guid>
+      <description> qmstrctl update project update a project node
+Synopsis update a project node described by a node identifier
+qmstrctl update project [flags]  Options  -h, --help help for project --name string Set ProjectNode&#39;s name --timestamp string Set ProjectNode&#39;s timestamp  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl update - Update nodes  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl version</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_version/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_version/</guid>
+      <description> qmstrctl version Print the version of qmstrctl
+Synopsis Print the version of qmstrctl
+qmstrctl version [flags]  Options  -h, --help help for version  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+    <item>
+      <title>qmstrctl wait</title>
+      <link>https://qmstr.org/documentation/reference/qmstrctl_wait/</link>
+      <pubDate>Mon, 06 Jul 2020 07:33:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/reference/qmstrctl_wait/</guid>
+      <description> qmstrctl wait Wait until the QMSTR master is ready
+Synopsis Wait until the QMSTR master is ready. Waiting will time out with an error after the timeout period has elapsed.
+qmstrctl wait [flags]  Options  -h, --help help for wait -t, --timeout int time is up (default 60)  Options inherited from parent commands  --cserv string connect to control service --verbose enable diagnostics  SEE ALSO  qmstrctl - qmstrctl controls and manages the QMSTR master  Auto generated by spf13/cobra on 6-Jul-2020 </description>
+    </item>
+    
+  </channel>
+</rss>

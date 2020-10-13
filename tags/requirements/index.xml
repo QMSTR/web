@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>requirements on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/requirements/</link>
+    <description>Recent content in requirements on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Feb 2019 08:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/requirements/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Announcing Quartermaster 0.5 Requirements Workshop and Hack Day: April 3 and 4, 2019</title>
+      <link>https://qmstr.org/blog/2019/02/25/qmstr-requirements-workshop-0.5/</link>
+      <pubDate>Mon, 25 Feb 2019 08:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2019/02/25/qmstr-requirements-workshop-0.5/</guid>
+      <description>&lt;p&gt;To prepare the development work on the quarterly QMSTR milestone
+releases, the team organizes requirements workshops open to the
+community. We are currently working on version 0.4, which is expected
+to be released in early April. 0.5 will be developed in the second
+quarter of 2019. The 0.5 requirements workshop will take place on
+April 3 and 4, 2019 at Endocode&amp;rsquo;s office in Berlin, Germany, right
+before the &lt;a href=&#34;https://github.com/Open-Source-Compliance/Sharing-creates-value&#34;&gt;Compliance Tooling
+Group&lt;/a&gt;
+meeting, &lt;a href=&#34;https://foss-north.se/2019/&#34;&gt;FOSS-NORTH&lt;/a&gt; and &lt;a href=&#34;https://fsfe.org/activities/ftf/legal-conference.en.html&#34;&gt;LLW
+2019&lt;/a&gt;. There
+is a limited availability of 20 seats, so please register early by
+using the contact form on the web site.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

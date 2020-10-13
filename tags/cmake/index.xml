@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmake on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/cmake/</link>
+    <description>Recent content in cmake on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Jan 2018 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster prototype development update #3</title>
+      <link>https://qmstr.org/blog/2018/01/29/qmstr-newsletter-3/</link>
+      <pubDate>Mon, 29 Jan 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2018/01/29/qmstr-newsletter-3/</guid>
+      <description>&lt;p&gt;The third Quartermaster prototype development sprint also marked the
+end of development of the Quartermaster prototype. Our main goal for
+the prototype was to work with our partners and collaborators to
+develop an approach to FOSS compliance automation that delivers
+correct and complete results in a variety of use cases. The
+integration of new build systems has been tested, the workflow phases
+have been refined and abstracted further and limits of the prototype
+design identified. We wrapped up the sprint with a workshop where the
+functionality of the prototype was evaluated and the findings applied
+to a draft architecture of the first production release of
+Quartermaster.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

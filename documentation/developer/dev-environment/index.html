@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Development environment - Quartermaster - Documentation</title>
+<meta name="description" content="QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.">
+<meta name="generator" content="Hugo 0.55.0" />
+<link href="https://qmstr.org/documentationindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://qmstr.org/documentation/developer/dev-environment/">
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/theme.min.css">
+
+
+<link rel="stylesheet" href="https://qmstr.org/documentationcss/qmstr.css">
+
+
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://qmstr.org/documentation/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://qmstr.org/documentation/js/jquery.backtothetop/jquery.backtothetop.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601155-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-40601155-2');
+</script>
+</head>
+<body>
+<div class="container"><header>
+<h1>Quartermaster - Documentation</h1>
+
+<p class="description">QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.</p>
+
+</header>
+<div class="menu">
+<nav>
+<ul>
+<li><a href="https://qmstr.org/documentation/">Documentation</a></li>
+<li><a href="https://qmstr.org">Main Website</a></li>
+<li><a href="https://github.com/QMSTR">Repositories</a></li>
+<li><a href="https://twitter.com/fosscompliance">Twitter</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Development environment</h1>
+
+<p>To create a local development environment for Quartermaster, follow
+these instructions. The master by default runs in a container. See
+below for more details.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Quartermaster leverages Protobuf &amp; GRPC for the master - client
+communication. The <code>protoc</code> Protobuf compiler needs to be installed
+together with the Go protobuf library and generator. The later will be installed via the <code>Makefile</code>.</p>
+
+<h3 id="host-machine-preparation">Host machine preparation</h3>
+
+<p>Install the depencencies:</p>
+
+<ul>
+<li><p>If you are running an Ubuntu machine:</p>
+
+<blockquote>
+<p>sudo apt update</p>
+
+<p>sudo apt install golang protobuf-compiler</p>
+</blockquote>
+
+<ul>
+<li>Install Docker: <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a></li>
+</ul></li>
+
+<li><p>If you are running a Fedora machine:</p>
+
+<blockquote>
+<p>sudo dnf install golang protobuf-compiler</p>
+</blockquote></li>
+
+<li><p>Install Docker: <a href="https://docs.docker.com/install/linux/docker-ce/fedora/">https://docs.docker.com/install/linux/docker-ce/fedora/</a></p></li>
+</ul>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>Quartermaster uses protobuf for the communication between clients and the master. Install <code>protobuf</code> from your package manager.</p>
+
+<h2 id="checkout-sources">Checkout sources</h2>
+
+<blockquote>
+<p>git clone <a href="https://github.com/QMSTR/qmstr.git">https://github.com/QMSTR/qmstr.git</a></p>
+</blockquote>
+
+<h2 id="build-and-run-the-quartermaster-master-process">Build and run the Quartermaster master process</h2>
+
+<p>Quartermaster uses a multi-stage <a href="masterserver/Dockerfile">Dockerfile</a> to create various setups based on a common configuration. The DGraph database process and the Quartermaster master are executed in the container.</p>
+
+<p>In order to build the different parts of the qmstr system <code>make</code> is used.</p>
+
+<h3 id="building-qmstr">Building qmstr</h3>
+
+<p>There are several targets defined in the <code>Makefile</code> to build the different parts of qmstr:
+The client tools:
+    - qmstrctl - client tool to communicate with the master server</p>
+
+<pre><code>  &gt; make qmstrctl
+
+- qmstr - wrapper tool to set up and run programs in a qmstrized environment
+
+  &gt; make qmstr
+</code></pre>
+
+<p>Automatic targets are created to build every module inside the <code>modules/{builders,analyzers,reporters}</code> directories e.g to build the <code>spdx-analyzer</code> that can be found in <code>modules/analyzers/spdx-analyzer</code> run:</p>
+
+<pre><code>&gt; make spdx-analyzer
+</code></pre>
+
+<p>In order to assemble a full master image use the <code>master</code> target:</p>
+
+<pre><code>&gt; make master
+</code></pre>
+<div class="edit-meta">Last updated on 18 Apr 2019
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://qmstr.org/documentation/developer/how-to-participate/" title="How to participate"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - How to participate</a>
+<a class="nav nav-next" href="https://qmstr.org/documentation/reference/" title="Command line reference">Next - Command line reference <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer></footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="https://qmstr.org/documentation">Home</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/">Introduction</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/introduction/what-is-qmstr/">What is QMSTR?</a></li>
+<li class=""><a href="https://qmstr.org/documentation/introduction/why-qmstr/">Why QMSTR?</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/installation/">Installing Quartermaster</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/">Getting started</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/debian-curl_tutorial/">Debian cURL tutorial</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/json-c_tutorial/">JSON-C tutorial</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/">Quartermaster Basics</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/">Managing Nodes</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/">Database commands</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/create/">Create command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/describe/">Describe command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/delete/">Delete command</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/connections/">Connections between nodes</a>
+</li>
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/labels/">Node labels in Quartermaster</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/configuration/">Configuration</a>
+</li>
+
+<li class="parent"><a href="https://qmstr.org/documentation/developer/">For Developers</a>
+<ul class="sub-menu">
+<li class=""><a href="https://qmstr.org/documentation/developer/how-to-participate/">How to participate</a></li>
+<li class="active"><a href="https://qmstr.org/documentation/developer/dev-environment/">Development environment</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/reference/">Command line reference</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr/">qmstr</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/">qmstr dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_run/">qmstr run</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_validate/">qmstr validate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl/">qmstrctl</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_add-graph/">qmstrctl add-graph</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_analyze/">qmstrctl analyze</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_clean/">qmstrctl clean</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_connect/">qmstrctl connect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_copy/">qmstrctl copy</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create/">qmstrctl create</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_file/">qmstrctl create file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_package/">qmstrctl create package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_project/">qmstrctl create project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_delete/">qmstrctl delete</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_describe/">qmstrctl describe</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/">qmstrctl dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_disconnect/">qmstrctl disconnect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_logs/">qmstrctl logs</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_quit/">qmstrctl quit</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_report/">qmstrctl report</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_snapshot/">qmstrctl snapshot</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_spawn/">qmstrctl spawn</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_start/">qmstrctl start</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_status/">qmstrctl status</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update/">qmstrctl update</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_file/">qmstrctl update file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_package/">qmstrctl update package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_project/">qmstrctl update project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_version/">qmstrctl version</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_wait/">qmstrctl wait</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/">Work in progress</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/wip/android-support/">Support for Android Application (apk) builds</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/validation/">The QMSTR Validator</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/self-contained-modules/">Towards self-contained modules</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

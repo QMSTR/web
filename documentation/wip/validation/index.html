@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The QMSTR Validator - Quartermaster - Documentation</title>
+<meta name="description" content="QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.">
+<meta name="generator" content="Hugo 0.55.0" />
+<link href="https://qmstr.org/documentationindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://qmstr.org/documentation/wip/validation/">
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/theme.min.css">
+
+
+<link rel="stylesheet" href="https://qmstr.org/documentationcss/qmstr.css">
+
+
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://qmstr.org/documentation/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://qmstr.org/documentation/js/jquery.backtothetop/jquery.backtothetop.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601155-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-40601155-2');
+</script>
+</head>
+<body>
+<div class="container"><header>
+<h1>Quartermaster - Documentation</h1>
+
+<p class="description">QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.</p>
+
+</header>
+<div class="menu">
+<nav>
+<ul>
+<li><a href="https://qmstr.org/documentation/">Documentation</a></li>
+<li><a href="https://qmstr.org">Main Website</a></li>
+<li><a href="https://github.com/QMSTR">Repositories</a></li>
+<li><a href="https://twitter.com/fosscompliance">Twitter</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>The QMSTR Validator</h1>
+
+<p>The QMSTR Validator is a command line program that validates the
+manifests for a package or a distribution. It verifies the content
+of packages against the compliance manifest and answers three
+questions:</p>
+
+<ul>
+<li>Does the manifest match the package? The manifest matches
+the package if the checksums for the files contained in the package
+match the information in the manifest. This check will fail,
+for example, if a binary has been changed or rebuilt after the
+documentation was created so that the checksums do not match.</li>
+<li>Does the package only contain files that are documented? This test
+will fail if there are files in the package that are not described
+in the manifest.</li>
+<li>Is the documentation complete? The manifest is complete if it
+describes all files in the package and contains all required
+information about these files. This check will fail, for example,
+if license or authorship information is missing even though the file
+is listed in the manifest.</li>
+</ul>
+
+<p>To validate a package, the QMSTR Validator must have been implemented
+to support that package format. For each format, a standard or a best
+practice needs to exist that describes how the package compliance
+documentation and the package payload content are shipped
+together. Initially, the validator supports the Debian file format as
+a starting point.</p>
+
+<p>The validator validates one package, however &ldquo;traversing into
+elements&rdquo;. That means it first validates that the distribution is
+&ldquo;correct&rdquo;, and then validates that the same goes for all element
+packages. There should be no separate concepts for packages and
+distributions. Distributions are simply packages that contain other
+packages instead of files to be installed. Or - if you &ldquo;install&rdquo; a
+distribution file into a directory, you get the element packages.</p>
+
+<h2 id="terminology">Terminology</h2>
+
+<ul>
+<li><em>Package</em>: A package is a concrete &ldquo;form of archive&rdquo; intended for
+distribution that is created during a build. It could be a tarball,
+a Debian or RPM package, or even a file system overlay that contains
+only what was packaged. For the first implementation, we want to
+focus specifically on Debian packages and then abstract the concept.</li>
+<li><em>Distribution</em>: A distribution is a collection of packages. The
+concept is not related to &ldquo;Linux distribution&rdquo;, but to a software
+delivery. It is a file-like entity, not a process (as in
+handover). If <em>distribution</em> is imagined as a file, it is also a
+<em>package</em>. The concepts are purposefully recursive, so that
+validation can be applied to both exactly the same way.</li>
+<li><em>Software delivery</em>: A software delivery is the handover and
+acceptance of a package (or set of packages, a distribution) from a
+supplier to a customer. Software delivery always involves two
+parties, one that provides a package with a manifest and one that
+receives those and validates them against each other.</li>
+<li><em>Manifest</em>: A manifest in the context of validation is a SPDX file
+that describes exactly one package, including its sub-packages
+(which are files), but not the content of the sub-packages. The
+manifest for a distribution describes the content of the
+distribution (the packages in the collection). The elements of the
+distribution contain or bring their own manifests.</li>
+</ul>
+
+<h2 id="invoking-the-qmstr-validator">Invoking the QMSTR Validator</h2>
+
+<p>The QMSTR Validator is invoked on a package and the corresponding
+manifest file:</p>
+
+<pre><code>&gt; qmstr validate curl-a.b.c.deb curl-a.b.c.deb.spdx
+Verifying package content against manifest curl-a.b.c.deb.spdx...
+* manifest matches the package content
+* all files in the package are documented
+* manifest is complete
+Package validation passed.
+</code></pre>
+
+<p>In case of a validation error, the return code of the validator
+depends on which of the checks failed (1, 2 or 3). If the validation
+succeeds the return code is zero.</p>
+
+<p>Depending on the file format, the manifest file may be included in the
+package. Support for that may be added to the validator.</p>
+
+<h2 id="verifying-distributions">Verifying distributions</h2>
+
+<p>In the QMSTR context, a distribution is a set of packages that is
+shipped together as a unit. The validator can be used to evaluate
+distributions. The validation succeeds if the validation for each
+package contained in the distribution succeeds.</p>
+
+<p>The basic algorithm is</p>
+
+<ul>
+<li>validate the package itself</li>
+<li>for each element package
+
+<ul>
+<li>validate the element package</li>
+</ul></li>
+<li>succeed if both steps validate, fail if not</li>
+</ul>
+
+<h2 id="development-plan">Development plan</h2>
+
+<h3 id="qmstr-0-6-trl-6">QMSTR 0.6: TRL 6</h3>
+
+<p>For QMSTR 0.6, validation is suppossed to
+reach
+<a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/faq;keywords=/2890">H2020 TRL 6</a> (&ldquo;technology
+demonstrated in relevant environment &ldquo;). In detail, this means:</p>
+
+<ul>
+<li>A first working version of the QMSTR Validator will be implemented
+against the Debian package file format.</li>
+<li>The package manifest reporter will be implemented to produce
+manifests that match the format expectations of the validator
+(one-to-one match between package amd manifest, mandatory manifest
+content).</li>
+<li>The validator will be implemented to validate the package against
+the manifests generated by the package manifest reporter.</li>
+<li>The QMSTR CURL demo will be extended to showcase the validation
+feature. The demonstration will consist of two separate steps, build
+and validation (the steps are separate since they could be performed
+by different entities in real life, simulating a software delivery):
+
+<ul>
+<li>On the build side, the demo should build curl and create the .deb
+packages for it, as well as the manifests for the packages.</li>
+<li>On the validation side, the demo should validate the packages
+against the generated manifests.</li>
+</ul></li>
+</ul>
+
+<p>The validation feature will be merged into the QMSTR master branch
+after this demonstration.</p>
+
+<h3 id="qmstr-0-7-trl-7">QMSTR 0.7: TRL 7</h3>
+
+<p>The validation feature will be demonstrated at conferences in
+Q4/2019. Based on the feedback, the feature will be completed at TRL 7
+(&ldquo;system prototype demonstration in operational environment&rdquo;). Other
+packages formats may be added, in particular plain tar files and
+Android .apk packages.</p>
+
+<h2 id="dependencies">Dependencies</h2>
+
+<p>The QMSTR Validator runs stand-alone and does not require a QMSTR
+master to be available. The package manifest reporter runs as part of
+the QMSTR reporting phase.</p>
+
+<h2 id="potential-additional-features-iceboxed">Potential additional features (iceboxed)</h2>
+
+<h3 id="validation-levels">Validation Levels</h3>
+
+<p>Once the validation basics are complete, it is conceivable that the
+results may correspond to different validation levels:</p>
+
+<ul>
+<li>level 1: manifest has at least checksums</li>
+<li>level 2: manifest has rights holder and license information for all artifacts</li>
+<li>level 3: ???</li>
+</ul>
+
+<h3 id="delivery-receipts">Delivery receipts</h3>
+
+<p>On delivery, the validator could generate and cryptographically sign a
+delivery receipt. Delivery receipts could be collected in a central
+place, like an online repository or a blockchain.</p>
+
+<h3 id="self-contained-packages">Self-contained packages</h3>
+
+<p>Package formats could be extended so that they contain the
+manifests. This means that the software delivery would only contain
+package files that can be validated against themselfes.</p>
+
+<h3 id="additional-package-formats">Additional package formats</h3>
+
+<p>Feature completeness for the implemented formats currently has higher
+priority than adding additional formats. However, if there is enough
+interest, support for additional package formats should be added.</p>
+<div class="edit-meta">Last updated on 1 Jan 0001
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://qmstr.org/documentation/wip/android-support/" title="Support for Android Application (apk) builds"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Support for Android Application (apk) builds</a>
+<a class="nav nav-next" href="https://qmstr.org/documentation/wip/self-contained-modules/" title="Towards self-contained modules">Next - Towards self-contained modules <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer></footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="https://qmstr.org/documentation">Home</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/">Introduction</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/introduction/what-is-qmstr/">What is QMSTR?</a></li>
+<li class=""><a href="https://qmstr.org/documentation/introduction/why-qmstr/">Why QMSTR?</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/installation/">Installing Quartermaster</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/">Getting started</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/debian-curl_tutorial/">Debian cURL tutorial</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/json-c_tutorial/">JSON-C tutorial</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/">Quartermaster Basics</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/">Managing Nodes</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/">Database commands</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/create/">Create command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/describe/">Describe command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/delete/">Delete command</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/connections/">Connections between nodes</a>
+</li>
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/labels/">Node labels in Quartermaster</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/configuration/">Configuration</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/developer/">For Developers</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/developer/how-to-participate/">How to participate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/developer/dev-environment/">Development environment</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/reference/">Command line reference</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr/">qmstr</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/">qmstr dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_run/">qmstr run</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_validate/">qmstr validate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl/">qmstrctl</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_add-graph/">qmstrctl add-graph</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_analyze/">qmstrctl analyze</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_clean/">qmstrctl clean</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_connect/">qmstrctl connect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_copy/">qmstrctl copy</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create/">qmstrctl create</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_file/">qmstrctl create file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_package/">qmstrctl create package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_project/">qmstrctl create project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_delete/">qmstrctl delete</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_describe/">qmstrctl describe</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/">qmstrctl dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_disconnect/">qmstrctl disconnect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_logs/">qmstrctl logs</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_quit/">qmstrctl quit</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_report/">qmstrctl report</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_snapshot/">qmstrctl snapshot</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_spawn/">qmstrctl spawn</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_start/">qmstrctl start</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_status/">qmstrctl status</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update/">qmstrctl update</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_file/">qmstrctl update file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_package/">qmstrctl update package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_project/">qmstrctl update project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_version/">qmstrctl version</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_wait/">qmstrctl wait</a></li>
+</ul>
+  
+</li>
+
+<li class="parent"><a href="https://qmstr.org/documentation/wip/">Work in progress</a>
+<ul class="sub-menu">
+
+<li class=""><a href="https://qmstr.org/documentation/wip/android-support/">Support for Android Application (apk) builds</a>
+</li>
+
+<li class="parent active"><a href="https://qmstr.org/documentation/wip/validation/">The QMSTR Validator</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/self-contained-modules/">Towards self-contained modules</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

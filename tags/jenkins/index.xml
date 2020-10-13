@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/jenkins/</link>
+    <description>Recent content in Jenkins on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster prototype development update #2</title>
+      <link>https://qmstr.org/blog/2017/12/20/qmstr-newsletter-2/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2017/12/20/qmstr-newsletter-2/</guid>
+      <description>In the second Quartermaster prototype development sprint, we focused on the connection between Continuous Integration and the build instrumentation performed by Quartermaster. Jenkins serves as the reference build system for the prototype. We wanted to lay the foundation for executing Quartermaster instrumented builds from a CI build queue, and creating a feedback loop to developers by feeding FOSS compliance analysis results back into the build results page.
+Sprint #2: Initial integration between CI and Quartermaster With the end of this sprint, we published an initial plugin to Jenkins that communicates with the Quartermaster master process running adjacent to the software build process.</description>
+    </item>
+    
+  </channel>
+</rss>

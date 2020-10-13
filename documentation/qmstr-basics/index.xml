@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quartermaster Basics on Quartermaster - Documentation</title>
+    <link>https://qmstr.org/documentation/qmstr-basics/</link>
+    <description>Recent content in Quartermaster Basics on Quartermaster - Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Feb 2019 09:48:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/documentation/qmstr-basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node labels in Quartermaster</title>
+      <link>https://qmstr.org/documentation/qmstr-basics/labels/</link>
+      <pubDate>Wed, 27 Feb 2019 09:48:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/qmstr-basics/labels/</guid>
+      <description>Node labels are used to flexibly add data to nodes based on key-value pairs. For example, if a build process consists of multiple stages, a label can be used to mark nodes with the stage during which they are created. Or a target program generated during the build could be marked with a release milestone name. The labelling functionality allows for user-defined concepts to be flexibly represented in the knowledge graph.</description>
+    </item>
+    
+  </channel>
+</rss>

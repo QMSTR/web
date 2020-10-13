@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>What is QMSTR? - Quartermaster - Documentation</title>
+<meta name="description" content="QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.">
+<meta name="generator" content="Hugo 0.55.0" />
+<link href="https://qmstr.org/documentationindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://qmstr.org/documentation/introduction/what-is-qmstr/">
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/theme.min.css">
+
+
+<link rel="stylesheet" href="https://qmstr.org/documentationcss/qmstr.css">
+
+
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://qmstr.org/documentation/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://qmstr.org/documentation/js/jquery.backtothetop/jquery.backtothetop.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601155-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-40601155-2');
+</script>
+</head>
+<body>
+<div class="container"><header>
+<h1>Quartermaster - Documentation</h1>
+
+<p class="description">QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.</p>
+
+</header>
+<div class="menu">
+<nav>
+<ul>
+<li><a href="https://qmstr.org/documentation/">Documentation</a></li>
+<li><a href="https://qmstr.org">Main Website</a></li>
+<li><a href="https://github.com/QMSTR">Repositories</a></li>
+<li><a href="https://twitter.com/fosscompliance">Twitter</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>What is QMSTR?</h1>
+
+<p>Quartermaster is an integrated free and open source software (FOSS)
+toolchain that implements industry best practises of license
+compliance management. It is FOSS because the QMSTR community believes
+that software that manages FOSS compliance becomes critical
+infrastructure to the wider open source community and should itself be
+FOSS. QMSTR is developed in collaboration with users, legal experts
+and other interested stakeholders.</p>
+
+<h2 id="qmstr-a-command-line-workflow-toolchain-for-foss-compliance">QMSTR: A command-line workflow toolchain for FOSS compliance</h2>
+
+<p>QMSTR is implemented as a command line toolchain. It assumes that
+almost everywhere, software is built and packaged using command line
+based build systems that automate the build steps. By integrating into
+the common software development tooling, QMSTR programs may be used on
+the command line, in scripts, Makefiles, Jenkinsfiles and other
+places. QMSTR aggregates the knowledge it acquires about the software
+being built in a graph database held in a central master process.</p>
+
+<p>The workflow QMSTR implements proceeds through three separate phases,
+a build phase, an analysis phase and a reporting phase. The purpose of
+the build phase is to produce a build graph. For that, QMSTR
+integrates natively into build systems like Maven, or uses a fallback
+of wrapping the compiler and linker if the build system cannot
+otherwise produce a build graph (as in traditional Makefile based
+builds). This means QMSTR can support any build system that produces
+or can be shoehorned into revealing a build graph. The build graph
+describes which sources and dependencies are used to create which
+targets and in what way, and how these artifacts are being assembled
+into a package for distribution.</p>
+
+<p>The analysis phase utilizes a range of tools to augment the knowledge
+graph with metadata about the software for example by executing
+static analysis tools or retrieving information from other data
+sources. By combining the build graph with the results of the analysis
+phase, QMSTR is able to determine accurately what license and
+authorship metadata is relevant for the package that is finally
+distributed. It is also able to identify which elements of the source
+code are tests, examples or other fragments that do not get
+distributed and do not affect license and authorship of the
+distributed package.</p>
+
+<p>The reporting phase formats the results in the knowledge graph for a
+specific need. Creating a package SPDX manifest is done by using a
+reporter, as is triggering notification or producing CI test
+results. During the reporting phase, no additional data may be added
+to the knowledge graph anymore. It is considered frozen.</p>
+
+<h2 id="modular-analysis-and-reporting-architecture">Modular analysis and reporting architecture</h2>
+
+<p>The analysis and reporting functionality in QMSTR is implemented in
+modules. Modules are stand-alone programs that are executed by the
+master and have access to the knowledge graph and the source and build
+directories. Modules communicate with the master using the gRPC based
+master API. This means that modules may be written in any language
+that comes with support for gRPC communication. The modules shipped
+with QMSTR are commonly implemented in Go or Python. QMSTR for example
+ships modules to perform license or authorship analysis using Git or
+Scancode or to read and write SPDX manifests.</p>
+
+<p>Implementing custom modules and adding them to the master installation
+is relatively straightforward. Next to the modules shipped with QMSTR,
+users may add custom analysis or reporting modules that have the same
+access to the knowledge graph and the source and build artifacts as
+the built-in ones. This facilitates the implementation for example of
+checks on compliance with specific business policies or the integrate
+reporting with internal software delivery platforms. Since modules run
+as stand-alone processes and communicate with the master using gRPC,
+the implementer is free in the choice of license and may even create
+custom proprietary modules. All modules shipped with QMSTR are however
+FOSS.</p>
+
+<h2 id="apis-instead-of-file-formats">APIs instead of file formats</h2>
+
+<p>The QMSTR master is started right before the build process begins and
+terminates after the reporting phase ends. There are no long-running
+services as part of a QMSTR installation. To persist any results,
+reports need to be created and stored. All data collected during the
+build and analysis phase is held in a graph database managed by the
+master and made available to the modules by the master API. Without
+reporting (or caching), the data is ephemeral. QMSTR specifically
+avoids creating file formats for data exchange. SPDX exists for that
+purporse and is used in different places in QMSTR. Other formats can
+be consumed by analysis or created by reporting modules.</p>
+
+<h2 id="integration-into-ci-cd-pipelines">Integration into CI/CD pipelines</h2>
+
+<p>Software integration today should be automated and performed in
+continuous integration (CI) and continuous delivery (CD)
+pipelines. Since the steps performed by CI pipelines are commonly
+regular command line instructions, QMSTR can be integrated into a CI
+pipeline in the same style as the other instructions for the
+individual build steps. Endocode runs
+a
+<a href="https://ci.endocode.com/view/QMSTR/job/QMSTR/job/qmstr-cURL-demo/">public cURL with QMSTR demo</a> that
+showcases how all the steps necessary to perform a build with QMSTR
+can be integrated into CI without the need for specific integration
+(open the &ldquo;Blue Ocean&rdquo; view for more details).</p>
+
+<h2 id="summary-building-blocks-of-an-open-compliance-program">Summary: Building blocks of an open compliance program</h2>
+
+<p>QMSTR creates the license compliance information that comes with a
+distributed software package. If everything is set up properly and the
+metadata in the project source code is well-maintained, the resulting
+reports reduce legal and contractual uncertainty and streamline
+delivery along supply chains.</p>
+
+<p>QMSTR is however only one building block of an open compliance
+program. It complements (and is partly developed in cooperation with
+the communities) <a href="https://spdx.org/">SPDX</a> as the main license data
+exchange format and <a href="https://www.openchainproject.org/">OpenChain</a> as
+the specification of supply chain requirement. The combination of
+formats, tooling and processes &ndash; all available under FOSS licenses &ndash;
+provides all the necessary tools to maintain FOSS license compliance.</p>
+<div class="edit-meta">Last updated on 1 Apr 2019
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://qmstr.org/documentation/introduction/" title="Introduction"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Introduction</a>
+<a class="nav nav-next" href="https://qmstr.org/documentation/introduction/why-qmstr/" title="Why QMSTR?">Next - Why QMSTR? <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer></footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="https://qmstr.org/documentation">Home</a></li>
+
+<li class="parent"><a href="https://qmstr.org/documentation/introduction/">Introduction</a>
+<ul class="sub-menu">
+<li class="active"><a href="https://qmstr.org/documentation/introduction/what-is-qmstr/">What is QMSTR?</a></li>
+<li class=""><a href="https://qmstr.org/documentation/introduction/why-qmstr/">Why QMSTR?</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/installation/">Installing Quartermaster</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/">Getting started</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/debian-curl_tutorial/">Debian cURL tutorial</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/json-c_tutorial/">JSON-C tutorial</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/">Quartermaster Basics</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/">Managing Nodes</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/">Database commands</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/create/">Create command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/describe/">Describe command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/delete/">Delete command</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/connections/">Connections between nodes</a>
+</li>
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/labels/">Node labels in Quartermaster</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/configuration/">Configuration</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/developer/">For Developers</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/developer/how-to-participate/">How to participate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/developer/dev-environment/">Development environment</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/reference/">Command line reference</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr/">qmstr</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/">qmstr dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_run/">qmstr run</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_validate/">qmstr validate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl/">qmstrctl</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_add-graph/">qmstrctl add-graph</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_analyze/">qmstrctl analyze</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_clean/">qmstrctl clean</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_connect/">qmstrctl connect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_copy/">qmstrctl copy</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create/">qmstrctl create</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_file/">qmstrctl create file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_package/">qmstrctl create package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_project/">qmstrctl create project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_delete/">qmstrctl delete</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_describe/">qmstrctl describe</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/">qmstrctl dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_disconnect/">qmstrctl disconnect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_logs/">qmstrctl logs</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_quit/">qmstrctl quit</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_report/">qmstrctl report</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_snapshot/">qmstrctl snapshot</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_spawn/">qmstrctl spawn</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_start/">qmstrctl start</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_status/">qmstrctl status</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update/">qmstrctl update</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_file/">qmstrctl update file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_package/">qmstrctl update package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_project/">qmstrctl update project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_version/">qmstrctl version</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_wait/">qmstrctl wait</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/">Work in progress</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/wip/android-support/">Support for Android Application (apk) builds</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/validation/">The QMSTR Validator</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/self-contained-modules/">Towards self-contained modules</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

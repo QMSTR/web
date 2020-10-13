@@ -1,0 +1,43 @@
+[
+{
+	"uri": "http://qmstr.org/packages/",
+	"title": "Welcome to Quartermaster",
+	"tags": [],
+	"description": "",
+	"content": " Quartermaster FOSS Compliance Documentation This site provides FOSS compliance documentation about the following packages:\n cURL\n  About Quartermaster Quartermaster is an integrated Free and Open Source Software (FOSS) toolchain that implements industry best practises of license compliance management.\nQuartermaster runs adjacent to a software build in CI or development environments. It collects build graphs, performs analysis and generates compliance reports (for developers, reviewers, upstream and downstream).\nQuartermaster focuses on fact finding and accurate, complete and up-to-date compliance documentation.\nQuartermaster is developed under an openly governed collaborative model. For more information, visit the Quartermaster website, or follow the @fosscompliance Twitter account.\nMore bubbles: #Quartermaster v0.1 development update 4: Major refactoring, requirements workshop April 11 https://t.co/nJ83IKM94X #FOSS #Compliance pic.twitter.com/L17WTHNlJL\n\u0026mdash; Quartermaster (@fosscompliance) March 23, 2018  "
+},
+{
+	"uri": "http://qmstr.org/packages/curl/",
+	"title": "cURL",
+	"tags": [],
+	"description": "",
+	"content": " FOSS Compliance Documentation cURL Vendor Information  Vendor: Endocode FOSS Liaison: Mirko Boehm FOSS Compliance Contact: foss@endocode.com  Packages   Package   CURL   "
+},
+{
+	"uri": "http://qmstr.org/packages/curl/curl/",
+	"title": "cURL",
+	"tags": [],
+	"description": "",
+	"content": " cURL Versions  curl-7_72_0-233-ga32687798    "
+},
+{
+	"uri": "http://qmstr.org/packages/curl/curl/curl-7_72_0-233-ga32687798/",
+	"title": "curl-7_72_0-233-ga32687798",
+	"tags": [],
+	"description": "",
+	"content": " cURL @ curl-7_72_0-233-ga32687798 Licenses  cURL License ISC License BSD-3-Clause  Authors  Paul Vixie Alexander Peslyak Nikos Mavrogiannopoulos, Tomas Mraz, Stanislav Zidek, Robert Kolcun, Andreas Schneider  Targets:  Filename: curl/build/lib/libcurl.so\nSHA-1: f326f65839d9f00e875fb9ba69ee8f48b5b0c0ae  Licenses: cURL License, ISC License, BSD-3-Clause  Filename: curl/build/src/curl\nSHA-1: 66be97125939bb1dc52461e9c297da4a3f1441c4  Licenses: cURL License "
+},
+{
+	"uri": "http://qmstr.org/packages/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://qmstr.org/packages/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on The Quartermaster project.</title>
+    <link>https://qmstr.org/pages/</link>
+    <description>Recent content in Pages on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Dec 2017 00:00:00 -0600</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Imprint</title>
+      <link>https://qmstr.org/pages/impressum/</link>
+      <pubDate>Wed, 06 Dec 2017 00:00:00 -0600</pubDate>
+      
+      <guid>https://qmstr.org/pages/impressum/</guid>
+      <description>Quartermaster is a project of Endocode AG (see Imprint). Quartermaster aims at becoming a Linux Foundation collaborative project.</description>
+    </item>
+    
+  </channel>
+</rss>

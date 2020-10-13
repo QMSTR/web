@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sprint on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/sprint/</link>
+    <description>Recent content in sprint on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Apr 2019 08:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/sprint/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster Sprint 4.3 Development Report: Documentation, documentation, documentation</title>
+      <link>https://qmstr.org/blog/2019/04/03/qmstr-sprint-4.3-report/</link>
+      <pubDate>Wed, 03 Apr 2019 08:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2019/04/03/qmstr-sprint-4.3-report/</guid>
+      <description>&lt;p&gt;The QMSTR sprints 4.2 and 4.3 (this report covers both) are part of
+our current efforts to merge the ongoing QMSTR development and the
+FASTEN project. A key necessity for this was documentation. Everybody
+loves to write documentation, especially developers. Right? :-) To
+make it even more fun, we work on integrating end user and
+administrator documentation with the project source code and perform
+automated integration test automatically. We hope that this approach
+leads to documentation that works and is reliable. Even though this
+effort is still ongoing, some results are already visible. One of them
+is the project documentation on the main web site. Some feature
+development primarily on the node management command line interface is
+also in progress. It should be finished in time for the QMSTR 0.4
+release, planned for April 17.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Quartermaster Sprint 4.1 Development Report: Go, Java and Python integration libraries</title>
+      <link>https://qmstr.org/blog/2019/02/20/qmstr-sprint-4.1-report/</link>
+      <pubDate>Wed, 20 Feb 2019 08:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2019/02/20/qmstr-sprint-4.1-report/</guid>
+      <description>&lt;p&gt;The key goal of QMSTR milestone 4 is to stabilize the APIs and
+streamline the documentation and tutorials to prepare the integration
+with the development work that takes part in
+the &lt;a href=&#34;https://www.fasten-project.eu/&#34;&gt;FASTEN project&lt;/a&gt; and
+in
+&lt;a href=&#34;https://www.linuxfoundation.org/press-release/2018/12/the-linux-foundation-to-launch-new-tooling-project-to-improve-open-source-compliance/&#34;&gt;ACT&lt;/a&gt;. To
+prepare for that, sprint 4.1 focused on refactoring the integration
+libraries for Go, Java and Python that developers use to
+create &lt;a href=&#34;https://github.com/QMSTR&#34;&gt;QMSTR&lt;/a&gt; modules and client side
+tools. These libraries help users to create diverse sets of modules
+and client side code to fit their needs, and facilitate the
+integration with various services like CI/CD environments.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

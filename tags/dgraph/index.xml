@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dgraph on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/dgraph/</link>
+    <description>Recent content in dgraph on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/dgraph/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster v0.1 development update #1</title>
+      <link>https://qmstr.org/blog/2018/02/13/qmstr-newsletter-4/</link>
+      <pubDate>Tue, 13 Feb 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2018/02/13/qmstr-newsletter-4/</guid>
+      <description>&lt;p&gt;We hope you are ready for some fireworks as we kick of the development
+of the first Quartermaster version that aims for general
+availability. The goal for this sprint, after we wrapped up prototype
+development in the previous one, was to establish all the building
+blocks that will make the Quartermaster toolchain. They are based on
+the new system architecture developed at the requirements workshop on
+January 17, and based (but developed from scratch) on the learnings
+from the prototype. At the end of the sprint, we had a working
+Quartermaster again, with some fancy graph visualisations.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

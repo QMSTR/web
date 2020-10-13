@@ -1,0 +1,36 @@
+project:
+  name: "debian cURL packaging"
+  metadata:
+    Vendor: "Endocode"
+    OcFossLiaison: "Mirko Boehm"
+    OcComplianceContact: "foss@endocode.com"
+  analysis:
+    - analyzer: spdx-identifier-analyzer
+      name: "Simple SPDX Analyzer"
+      config:
+        workdir: "/buildroot"
+    - analyzer: scancode-analyzer
+      name: "Scancode Analyzer"
+      config:
+        workdir: "/buildroot"
+        resultfile: "/buildroot/scancode.json"
+        #cached: "true"
+    - analyzer: test-analyzer
+      name: "Simple CI Test Analyzer"
+      config:
+        workdir: "/buildroot"
+  reporting:
+    - reporter: test-reporter
+      name: "Test Reporter"
+      config:
+        siteprovider: "Endocode"
+    - reporter: qmstr-reporter-html
+      name: "Public HTML Reports"
+      config:
+        siteprovider: "Endocode"
+        baseurl: "http://localhost:8080/"
+    - reporter: package-manifest-reporter
+      name: "Package manifest Reporter"
+      config:
+        outputdir: "/buildroot"
+        pathSubst: ".+?/.+?/.+?/(.+)||./$1"

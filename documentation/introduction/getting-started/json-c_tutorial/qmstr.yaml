@@ -1,0 +1,23 @@
+project:
+  name: "JSON-C"
+  metadata:
+    Vendor: "Endocode"
+    OcFossLiaison: "Mirko Boehm"
+    OcComplianceContact: "foss@endocode.com"
+  analysis:
+    - analyzer: spdx-identifier-analyzer
+      name: "Simple SPDX Analyzer"
+      config:
+        workdir: "/buildroot"
+    - analyzer: scancode-analyzer
+      name: "Scancode Analyzer"
+      trustlevel: 400
+      config:
+        workdir: "/buildroot"
+        resultfile: "/buildroot/scancode.json"
+  reporting:
+    - reporter: qmstr-reporter-html
+      name: "Public HTML Reports"
+      config:
+        siteprovider: "Endocode"
+        baseurl: "http://qmstr.org/packages/"

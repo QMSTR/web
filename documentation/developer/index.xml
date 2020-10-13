@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>For Developers on Quartermaster - Documentation</title>
+    <link>https://qmstr.org/documentation/developer/</link>
+    <description>Recent content in For Developers on Quartermaster - Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Apr 2019 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/documentation/developer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to participate</title>
+      <link>https://qmstr.org/documentation/developer/how-to-participate/</link>
+      <pubDate>Thu, 18 Apr 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/developer/how-to-participate/</guid>
+      <description>The QMSTR development process is open to everybody to participate and contribute. The QMSTR community aims at a maximum of openness, transparency and accountability, and at minimizing barriers for newcomers. There are three pillars to the work of the community:
+ An open development process: Development is organized into quarterly milestones made up of bi-weekly sprints. Requirements are collaboratively developed. The QMSTR community offers mentoring opportunities for newcomer users and potential contributors.</description>
+    </item>
+    
+    <item>
+      <title>Development environment</title>
+      <link>https://qmstr.org/documentation/developer/dev-environment/</link>
+      <pubDate>Mon, 01 Apr 2019 15:26:15 +0000</pubDate>
+      
+      <guid>https://qmstr.org/documentation/developer/dev-environment/</guid>
+      <description>To create a local development environment for Quartermaster, follow these instructions. The master by default runs in a container. See below for more details.
+Prerequisites Quartermaster leverages Protobuf &amp;amp; GRPC for the master - client communication. The protoc Protobuf compiler needs to be installed together with the Go protobuf library and generator. The later will be installed via the Makefile.
+Host machine preparation Install the depencencies:
+ If you are running an Ubuntu machine:</description>
+    </item>
+    
+  </channel>
+</rss>

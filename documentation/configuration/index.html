@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Configuration - Quartermaster - Documentation</title>
+<meta name="description" content="QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.">
+<meta name="generator" content="Hugo 0.55.0" />
+<link href="https://qmstr.org/documentationindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://qmstr.org/documentation/configuration/">
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/theme.min.css">
+
+
+<link rel="stylesheet" href="https://qmstr.org/documentationcss/qmstr.css">
+
+
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://qmstr.org/documentation/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://qmstr.org/documentation/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://qmstr.org/documentation/js/jquery.backtothetop/jquery.backtothetop.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40601155-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-40601155-2');
+</script>
+</head>
+<body>
+<div class="container"><header>
+<h1>Quartermaster - Documentation</h1>
+
+<p class="description">QMSTR creates an integrated Open Source toolchain that implements industry best practises of license compliance management.</p>
+
+</header>
+<div class="menu">
+<nav>
+<ul>
+<li><a href="https://qmstr.org/documentation/">Documentation</a></li>
+<li><a href="https://qmstr.org">Main Website</a></li>
+<li><a href="https://github.com/QMSTR">Repositories</a></li>
+<li><a href="https://twitter.com/fosscompliance">Twitter</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Configuration</h1>
+
+<p><code>qmstr.yaml</code> is QMSTR&rsquo;s project level configuration file. It holds
+information about the analysis and reporting phase of a QMSTR process.</p>
+
+<p>Let&rsquo;s assume we want to run the JSON-C library as the project under analysis.
+The <code>qmstr.yaml</code> file for this project would look like this:</p>
+
+<pre><code>project:
+  name: &quot;json-c&quot;
+  metadata:
+    Vendor: &quot;Endocode&quot;
+    OcFossLiaison: &quot;Mirko Boehm&quot;
+    OcComplianceContact: &quot;foss@endocode.com&quot;
+  server:
+    rpcaddress: &quot;:50051&quot;
+    dbaddress: &quot;localhost:9080&quot;
+    dbworkers: 4
+  analysis:
+    - analyzer: spdx-identifier-analyzer
+      name: &quot;Simple SPDX-Identifier Analyzer&quot;
+      trustlevel: 300
+    - analyzer: scancode-analyzer
+      name: &quot;Scancode Analyzer&quot;
+      trustlevel: 400
+      config:
+        workdir: &quot;/buildroot&quot;
+        resultfile: &quot;/buildroot/scancode.json&quot;
+        # cached: &quot;true&quot;
+    - analyzer: git-analyzer
+      name: &quot;Git Analyzer&quot;
+      config:
+        workdir: &quot;/buildroot/jsonc&quot;
+    - analyzer: test-analyzer
+      name: &quot;Simple CI Test Analyzer&quot;
+      config:
+        tests: &quot;TestPackageNode&quot;
+    - analyzer: spdx-analyzer
+      name: &quot;SPDX Analyzer&quot;
+      trustlevel: 300
+      config:
+        spdxfile: &quot;/buildroot/SPDX.tag&quot;
+  reporting:
+    - reporter: test-reporter
+      name: &quot;Test Reporter&quot;
+      config:
+        siteprovider: &quot;Endocode&quot;
+    - reporter: qmstr-reporter-html
+      name: &quot;HTML Reporter&quot;
+      config:
+        siteprovider: &quot;Endocode&quot;
+        baseurl: &quot;http://qmstr.org/packages/&quot;
+
+</code></pre>
+
+<p>Depending on the project you want to run QMSTR with, you should change the name to your project&rsquo;s name.</p>
+
+<pre><code>project:
+  name: project_name
+</code></pre>
+
+<p>The metadata and server sections, are the default data and there is no need to modify them.</p>
+
+<pre><code>metadata:
+    Vendor: &quot;Endocode&quot;
+    OcFossLiaison: &quot;Mirko Boehm&quot;
+    OcComplianceContact: &quot;foss@endocode.com&quot;
+  server:
+    rpcaddress: &quot;:50051&quot;
+    dbaddress: &quot;localhost:9080&quot;
+    dbworkers: 4
+</code></pre>
+
+<h2 id="analyzers">Analyzers</h2>
+
+<p>The next step is to define and configure the analyzers to be used on our project.
+Analyzers run after the build process has finished successfully.
+All analyzers include the above sections:</p>
+
+<pre><code>- analyzer:
+   name:
+</code></pre>
+
+<p>In the <code>analyzer</code> section we provide the module name as it is defined in QMSTR.
+In the <code>name</code> section we provide a string with the full name of the analyzer.</p>
+
+<p>Most of the analyzers include an extra section <strong><code>config</code></strong>.
+The config section diverses for each analyzer, regarding the dependencies.</p>
+
+<h3 id="spdx-identifier-analyzer">SPDX-Identifier Analyzer</h3>
+
+<p><code>spdx-identifier-analyzer</code> scans input files and package manifests for project metadata
+in SPDX format.</p>
+
+<h3 id="scancode-analyzer">Scancode Analyzer</h3>
+
+<p><code>scancode-analyzer</code> uses the <a href="https://github.com/nexB/scancode-toolkit">scancode-toolkit</a> to
+scan a codebase for licenses and copyrights.
+Provide the working directory in order to use it.
+Scancode analyzer may be time consuming. To save time you can provide a result file,
+to save the scancode result. Next time you run
+your program with QMSTR you can provide the following line in your qmstr.yaml file:</p>
+
+<pre><code>cached: &quot;true&quot;
+</code></pre>
+
+<p>That way, the analyzer will use directly the scan result file from the previous build and
+it will skip the phase where it scans all the files. For the first build this option can not
+be used, as we would not have a scan result file.</p>
+
+<h3 id="python-spdx-analyzer">Python SPDX Analyzer</h3>
+
+<p>QMSTR is programed primarily in Golang, but it also includes some Python and Java programming.
+Our aim is for users to be able to include their own analyzers in the QMSTR process, which may
+be written in different programming languages. With the use of <a href="https://grpc.io">gRPC</a>
+and <a href="https://developers.google.com/protocol-buffers/docs/overview">protocol buffers</a>
+we can write client applications in different languages and connect them to the QMSTR server
+applications.
+<code>spdx-analyzer</code> is an example of this use case. It is written in Python and searches for
+SPDX licenses.
+To use this analyzer you have to include in the <code>config</code> section the directory
+of the file with all the information to be parsed by the analyzer.</p>
+
+<h3 id="git-analyzer">Git Analyzer</h3>
+
+<p>The <code>git-analyzer</code> extracts the current revision and other metadata from the repository
+of the project under analysis.
+Provide the path to the repository of the file in the <code>config</code> section,
+in order to use the analyzer.</p>
+
+<h3 id="test-analyzer">Test Analyzer</h3>
+
+<p><code>test-analyzer</code> runs tests to confirm that the build graph is valid.</p>
+
+<p>As you may have already noticed, in the qmstr.yaml you can define a <code>trustlevel</code>.
+Trust level does not influence anything yet, but for future purposes it will be a tool
+to choose certain results between the analyzers.</p>
+
+<h2 id="reporters">Reporters</h2>
+
+<p>Any functionality that processes the information in the knowledge graph and performs
+some action, is considered a report. A reporter may create output files,
+or submit messages to an IRC channel, or interact with an issue tracker.
+Reporters have to be configured after the declaration of the analyzers on the section
+<code>package/reporting:</code>.</p>
+
+<h3 id="test-reporter">Test Reporter</h3>
+
+<p><code>test-reporter</code> runs tests on the build graph to reassure the graph contains the expected results
+after the analysis phase and that we can proceed to the reporting phase.</p>
+
+<h3 id="html-reporter">HTML Reporter</h3>
+
+<p><code>qmstr-reporter-html</code> produces a site with the QMSTR reports of the project.
+In the <code>config</code> section please provide the URL which will host the site.</p>
+<div class="edit-meta">Last updated on 1 Jan 0001
+<br></div><nav class="pagination"><a class="nav nav-prev" href="https://qmstr.org/documentation/qmstr-basics/labels/" title="Node labels in Quartermaster"><i class="fas fa-arrow-left" aria-hidden="true"></i> Prev - Node labels in Quartermaster</a>
+<a class="nav nav-next" href="https://qmstr.org/documentation/developer/" title="For Developers">Next - For Developers <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+</nav><footer></footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="https://qmstr.org/documentation">Home</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/">Introduction</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/introduction/what-is-qmstr/">What is QMSTR?</a></li>
+<li class=""><a href="https://qmstr.org/documentation/introduction/why-qmstr/">Why QMSTR?</a></li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/installation/">Installing Quartermaster</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/">Getting started</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/debian-curl_tutorial/">Debian cURL tutorial</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/introduction/getting-started/json-c_tutorial/">JSON-C tutorial</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/">Quartermaster Basics</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/">Managing Nodes</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/">Database commands</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/create/">Create command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/describe/">Describe command</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/qmstr-cli/database_cmds/delete/">Delete command</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/connections/">Connections between nodes</a>
+</li>
+<li class=""><a href="https://qmstr.org/documentation/qmstr-basics/labels/">Node labels in Quartermaster</a></li>
+</ul>
+  
+</li>
+
+<li class="parent active"><a href="https://qmstr.org/documentation/configuration/">Configuration</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/developer/">For Developers</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/developer/how-to-participate/">How to participate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/developer/dev-environment/">Development environment</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/reference/">Command line reference</a>
+<ul class="">
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr/">qmstr</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_dev-generate-reference/">qmstr dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_run/">qmstr run</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstr_validate/">qmstr validate</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl/">qmstrctl</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_add-graph/">qmstrctl add-graph</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_analyze/">qmstrctl analyze</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_clean/">qmstrctl clean</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_connect/">qmstrctl connect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_copy/">qmstrctl copy</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create/">qmstrctl create</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_file/">qmstrctl create file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_package/">qmstrctl create package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_create_project/">qmstrctl create project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_delete/">qmstrctl delete</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_describe/">qmstrctl describe</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_dev-generate-reference/">qmstrctl dev-generate-reference</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_disconnect/">qmstrctl disconnect</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_logs/">qmstrctl logs</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_quit/">qmstrctl quit</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_report/">qmstrctl report</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_snapshot/">qmstrctl snapshot</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_spawn/">qmstrctl spawn</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_start/">qmstrctl start</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_status/">qmstrctl status</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update/">qmstrctl update</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_file/">qmstrctl update file</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_package/">qmstrctl update package</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_update_project/">qmstrctl update project</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_version/">qmstrctl version</a></li>
+<li class=""><a href="https://qmstr.org/documentation/reference/qmstrctl_wait/">qmstrctl wait</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/">Work in progress</a>
+<ul class="">
+
+<li class=""><a href="https://qmstr.org/documentation/wip/android-support/">Support for Android Application (apk) builds</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/validation/">The QMSTR Validator</a>
+</li>
+
+<li class=""><a href="https://qmstr.org/documentation/wip/self-contained-modules/">Towards self-contained modules</a>
+</li>
+</ul>
+  
+</li>
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

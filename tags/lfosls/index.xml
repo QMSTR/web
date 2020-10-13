@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LFOSLS on The Quartermaster project.</title>
+    <link>https://qmstr.org/tags/lfosls/</link>
+    <description>Recent content in LFOSLS on The Quartermaster project.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Mar 2018 00:00:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://qmstr.org/tags/lfosls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quartermaster v0.1 development update #3: It works - now make it easier</title>
+      <link>https://qmstr.org/blog/2018/03/13/qmstr-newsletter-6/</link>
+      <pubDate>Tue, 13 Mar 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://qmstr.org/blog/2018/03/13/qmstr-newsletter-6/</guid>
+      <description>&lt;p&gt;In sprint #3 towards Quartermaster v0.1, we made it easer to package
+the master into a Docker container using
+a
+&lt;a href=&#34;https://docs.docker.com/develop/develop-images/multistage-build/&#34;&gt;multi-stage Docker file&lt;/a&gt;,
+merged the &lt;code&gt;qmstr-container&lt;/code&gt; repository into the &lt;code&gt;qmstr&lt;/code&gt; one, set up
+more CI to endure quality of the master HEAD and the incoming PRs,
+extended license detection with ScanCode and Ninka, and began
+implementing the reporting API endpoint. You can now see the build and
+test results both for incoming PRs as well as for the master mainline
+branch. Finally we prepared Quartermaster to be presented at
+the
+&lt;a href=&#34;https://events.linuxfoundation.org/events/open-source-leadership-summit-2018/&#34;&gt;Open Source Leadership Summit&lt;/a&gt;. We
+made good progress, even though the setup is still a bit rough at the
+edges. It works, but the APIs are not yet as modular as we want them
+to be. We will focus on that in the next sprint.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
